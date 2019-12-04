@@ -1,9 +1,9 @@
 # dotfiles_mac
 
-### Requirement
+## Requirement
 - MacOS
 
-### Install
+## Install
 
 1. Download  
   `git clone https://github.com/okimurak/dotfiles_mac.git`
@@ -13,7 +13,7 @@
 
 4. Enjoy for doffile managements!
 
-### COmponents
+## Components
 
 - zsh
 - git
