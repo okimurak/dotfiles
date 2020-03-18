@@ -10,6 +10,9 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+# No deployment blob
+setopt nonomatch
+
 # Customize to your needs...
 # alies Config
 alias ls='ls -FG'
