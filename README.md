@@ -2,6 +2,7 @@
 
 ## Requirement
 - MacOS
+- [prezto](https://github.com/sorin-ionescu/prezto)
 
 ## Install
 
