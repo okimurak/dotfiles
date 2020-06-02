@@ -13,7 +13,7 @@
 [rebase]
   autostash = true
 [alias]
-        delete-merged-branch = "!f () { git switch $1; git branch --merged|egrep -v '\*|develop|staging|release|master'|xargs git branch -d;git fetch --prune; };f"
+        delete-merged-branch = "!f () { git branch --merged | egrep -v '\\*|master|develop' | xargs git branch -d; git fetch --prune; }; f"
         pull-request = "!hub browse -- compare/develop...$(git symbolic-ref --short HEAD)?body=%0A%23$(echo $(git symbolic-ref --short\
  HEAD) |awk -F'[/_-]' '{print $2}')%0A%0A%23%20Before%0A%0A%23%20After%20%0A%0A"
 
