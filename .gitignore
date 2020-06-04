@@ -1,19 +1,6 @@
-### all ignore ###
-/*
-/.**
-
-### not ignore ###
-!/.zshrc
-!/.zshenv
-!/.bin/
-!/.bin/**
-!/.bin.local
-!/.config/
-!/.config/**
-!/.gitignore_global
-!/.gitconfig_shared
-
-!/README.md
-!/LICENSE
-!/.gitignore
-!/.gitkeep
+# General
+*~
+# OS
+.DS_Store
+# Git
+.gitconfig
