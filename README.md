@@ -49,6 +49,12 @@ Please install the following font for your environment.
 
 - Enjoy for doffile managements !
 
+## Install Tool
+
+```bash
+./tool/install_tool.sh
+```
+
 ## Uninstall
 
 Run the following command.
@@ -59,8 +65,17 @@ Run the following command.
 
 ## Components
 
+
+### Main
+
 - zsh
   - Prezto
     - Theme : [romkatv/powerlevel10](https://github.com/romkatv/powerlevel10)
 - [HomeBrew](https://docs.brew.sh/)
 - Git
+
+### Tools
+
+- Go
+- node
+- markdownlint
