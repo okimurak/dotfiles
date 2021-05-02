@@ -2,4 +2,11 @@
 
 source $(dirname $0)/../.profile
 
-brew installl jq
+declare -a arr=(
+  "jq"
+  "peco"
+  )
+
+for tool in "${arr[@]}"; do
+  brew install ${tool}
+done

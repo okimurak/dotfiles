@@ -35,9 +35,20 @@ alias kc='kubectl'
 # aws (from docker container)
 alias aws='docker run --rm -ti -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli'
 
+# --------- function ----------
 function docker-search-tags() {
   curl -s -S "https://registry.hub.docker.com/v1/repositories/$1/tags" | jq '.[]["name"]'
 }
+
+# peco
+function peco-history-selection() {
+    BUFFER=`history -n 1 | tac  | awk '!a[$0]++' | peco`
+    CURSOR=$#BUFFER
+    zle reset-prompt
+}
+
+zle -N peco-history-selection
+bindkey '^R' peco-history-selection
 
 # Utility
 # execute ls after cd
