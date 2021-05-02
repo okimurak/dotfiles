@@ -1,8 +1,10 @@
 # General
 *~
-# OS
-.DS_Store
 # Git
 .gitconfig
 # Ruby
 Gemfile.lock
+# Mac OS
+.DS_Store
+# Windows
+Thumbs.db
