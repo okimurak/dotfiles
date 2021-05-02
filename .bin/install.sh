@@ -1,41 +1,16 @@
 #!/usr/bin/env bash
-# reference : https://qiita.com/b4b4r07/items/24872cdcbec964ce2178
-set -ue
 
-helpmsg() {
-  command echo "Usage: $0 [--help | -h]" 0>&2
-  command echo ""
-}
+base_dir="$(dirname $0)"
 
-link_to_homedir() {
-  local dot_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")"/.. && pwd)"
-  for f in .??*
-  do
-    [[ `basename $f` == ".bin" ]] && continue
-    [[ `basename $f` == ".git" ]] && continue
+declare -a arr=(
+  "install_brew.sh"
+  "install_config.sh"
+  "install_zsh.sh"
+  "install_zsh_config.sh"
+  )
 
-    if [[ -L "$HOME/$f" ]];then
-      rm -f "$HOME/$f"
-    fi
-    ln -snf "$dot_dir/$f" "$HOME/$f"
-  done
-}
-
-while [ $# -gt 0 ];do
-  case ${1} in
-    --debug|-d)
-      set -uex
-      ;;
-    --help|-h)
-      helpmsg
-      exit 1
-      ;;
-    *)
-      ;;
-  esac
-  shift
+for tool_shell in "${arr[@]}"; do
+  "./${base_dir}/${tool_shell}"
 done
 
-link_to_homedir
-git config --global include.path "~/.gitconfig_shared"
 echo -e "\e[1;36m Install completed!!!! \e[m"
