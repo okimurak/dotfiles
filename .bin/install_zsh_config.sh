@@ -1,6 +1,12 @@
 #!/usr/bin/env zsh
+set -xe
 
 # Install Prezto
+
+if [[ -e "${ZDOTDIR:-$HOME}/.zprezto" ]]; then
+  rm -rf "${ZDOTDIR:-$HOME}/.zprezto"
+fi
+
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
 setopt EXTENDED_GLOB

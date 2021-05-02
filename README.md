@@ -1,5 +1,7 @@
 # dotfiles
 
+Setup dotfiles on Homebrew.
+
 ## Requirement
 
 - Linux
@@ -26,8 +28,10 @@ EOF
 
 - Install
 
+Run the following command.
+
 ```bash
-dotfiles_mac/.bin/install.sh
+.bin/install.sh
 ```
 
 - Install Font
@@ -45,9 +49,18 @@ Please install the following font for your environment.
 
 - Enjoy for doffile managements !
 
+## Uninstall
+
+Run the following command.
+
+```bash
+.bin/uninstall.sh
+```
+
 ## Components
 
 - zsh
   - Prezto
     - Theme : [romkatv/powerlevel10](https://github.com/romkatv/powerlevel10)
+- [HomeBrew](https://docs.brew.sh/)
 - Git

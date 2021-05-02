@@ -9,6 +9,8 @@ declare -a arr=(
   "install_zsh_config.sh"
   )
 
+
+source $(dirname $0)/../.profile
 for tool_shell in "${arr[@]}"; do
   "./${base_dir}/${tool_shell}"
 done
