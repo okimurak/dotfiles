@@ -60,6 +60,9 @@ bindkey '^R' peco-history-selection
 # execute ls after cd
 chpwd() {ls}
 
+# pyenv
+eval "$(pyenv init -)"
+
 # Theme
 source ~/.profile
 source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme

@@ -81,3 +81,6 @@ Run the following command.
 - Go
 - node
 - markdownlint
+- Python
+- Other
+  - See [To Brew Shell](./tool/install_tool_to_brew)
