@@ -5,6 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# ----------------- Utility ---------------------
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -13,7 +14,21 @@ fi
 # No deployment blob
 setopt nonomatch
 
-# Customize to your needs...
+# execute ls after cd
+chpwd() {ls}
+
+# pyenv config
+eval "$(pyenv init -)"
+
+# Theme
+source ~/.profile
+source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# ----------------- Alias ---------------------
+
 # alies Config
 alias ls='ls -FG'
 
@@ -41,7 +56,7 @@ alias ctop='docker run --rm -ti \
   --volume /var/run/docker.sock:/var/run/docker.sock:ro \
   quay.io/vektorlab/ctop:latest'
 
-# --------- function ----------
+# ----------------- Function ---------------------
 function docker-search-tags() {
   curl -s -S "https://registry.hub.docker.com/v1/repositories/$1/tags" | jq '.[]["name"]'
 }
@@ -55,17 +70,3 @@ function peco-history-selection() {
 
 zle -N peco-history-selection
 bindkey '^R' peco-history-selection
-
-# Utility
-# execute ls after cd
-chpwd() {ls}
-
-# pyenv
-eval "$(pyenv init -)"
-
-# Theme
-source ~/.profile
-source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
