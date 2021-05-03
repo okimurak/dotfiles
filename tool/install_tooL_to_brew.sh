@@ -16,6 +16,17 @@ declare -a arr=(
   "tfenv"
   )
 
-for tool in "${arr[@]}"; do
-  brew install ${tool}
-done
+
+install() {
+  for tool in "${arr[@]}"; do
+    brew install ${tool}
+  done
+}
+
+uninstall() {
+  for tool in "${arr[@]}"; do
+    brew uninstall ${tool}
+  done
+}
+
+install
