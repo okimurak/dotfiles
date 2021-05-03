@@ -7,7 +7,7 @@ declare -a arr=(
   "coreutils" # tac
   "gettext" # envsubst
   "git-secrets"
-  "hado-lint"
+  "hadolint"
   "jq"
   "lazydocker"
   "peco"
