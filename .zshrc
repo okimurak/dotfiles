@@ -35,6 +35,12 @@ alias kc='kubectl'
 # aws (from docker container)
 alias aws='docker run --rm -ti -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli'
 
+# ctop(https://github.com/bcicen/ctop)
+alias ctop='docker run --rm -ti \
+  --name=ctop \
+  --volume /var/run/docker.sock:/var/run/docker.sock:ro \
+  quay.io/vektorlab/ctop:latest'
+
 # --------- function ----------
 function docker-search-tags() {
   curl -s -S "https://registry.hub.docker.com/v1/repositories/$1/tags" | jq '.[]["name"]'
