@@ -3,6 +3,7 @@
 source $(dirname $0)/../.profile
 
 declare -a arr=(
+  "coreutils" # tac
   "jq"
   "peco"
   )
