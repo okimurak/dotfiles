@@ -83,4 +83,4 @@ Run the following command.
 - markdownlint
 - Python
 - Other
-  - See [To Brew Shell](./tool/install_tool_to_brew)
+  - See [To Brew Shell](./tool/install_tool_to_brew.sh)

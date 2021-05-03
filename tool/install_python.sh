@@ -2,6 +2,16 @@
 
 source $(dirname $0)/../.profile
 
-pyenv install -f 3.7.0
-pyenv install -f 3.8.0
-pyenv install -f 3.9.0
+declare -a arr=(
+  "3.7.0"
+  "3.8.0"
+  "3.9.0"
+  )
+
+install() {
+  for pyver in "${arr[@]}"; do
+    pyenv install -f  ${pyver}
+  done
+}
+
+install
