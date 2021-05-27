@@ -6,6 +6,7 @@ declare -a arr=(
   "assume-role"
   "coreutils" # tac
   "gettext" # envsubst
+  "go"
   "git-secrets"
   "hado-lint"
   "jq"
