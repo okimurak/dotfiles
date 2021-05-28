@@ -19,8 +19,9 @@ npm -v
 
 # move workspace
 base_dir=$(dirname $0)
-workspace=${base_dir}/../..
-textlintrc_path=$(pwd)/${base_dir}/.textlintrc 
+lint_configure_path=$(pwd)/${base_dir}/
+workspace=${lint_configure_path}../../
+echo "Mode workspace to ${workspace}"
 cd ${workspace}
 
 # install textlint compo
@@ -31,7 +32,10 @@ npm install --save-dev \
     textlint-rule-spellcheck-tech-word \
     textlint-rule-ja-space-between-half-and-full-width
 
-# initialize textlint
+# Initialize textlint
 npx textlint --init
 rm -f .textlintrc
-ln -snf ${textlintrc_path} .textlintrc 
+ln -snf ${lint_configure_path}.textlintrc .textlintrc 
+
+# Configure Markdown Lint(for VS Code : https://github.com/DavidAnson/vscode-markdownlint)
+ln -snf ${lint_configure_path}.markdownlint.jsonc .markdownlint.jsonc
