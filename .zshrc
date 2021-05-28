@@ -71,4 +71,8 @@ function peco-history-selection() {
 zle -N peco-history-selection
 bindkey '^R' peco-history-selection
 
+# ----------------- Variable ---------------------
+# go
 export GOPATH=$(go env GOPATH)
+# nodebrew
+export PATH=$HOME/.nodebrew/current/bin:$PATH
