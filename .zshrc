@@ -70,3 +70,5 @@ function peco-history-selection() {
 
 zle -N peco-history-selection
 bindkey '^R' peco-history-selection
+
+export GOPATH=$(go env GOPATH)
