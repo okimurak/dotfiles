@@ -1,8 +1,6 @@
 [core]
 	editor = vi
 	quotepath = false
-[commit]
-	template = ~/.stCommitMsg
 [rebase]
   autostash = true
 [alias]
