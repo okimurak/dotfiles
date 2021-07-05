@@ -47,9 +47,6 @@ alias dcprune='docker container prune'
 # Kubernetes Operation
 alias kc='kubectl'
 
-# aws (from docker container)
-alias aws='docker run --rm -ti -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli'
-
 # ctop(https://github.com/bcicen/ctop)
 alias ctop='docker run --rm -ti \
   --name=ctop \

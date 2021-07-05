@@ -76,7 +76,6 @@ Run the following command.
 
 ### Tools
 
-- [AWS CLI v2](https://docs.aws.amazon.com/cli/index.html) (from docker)
 - [ctop](https://github.com/bcicen/ctop) (from docker)
 - Go
 - node
