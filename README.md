@@ -38,6 +38,7 @@ Run the following command.
 
 Please install the following font for your environment.
 
+- [DejaVu Sans Mono](https://ja.fonts2u.com/download/dejavu-sans-mono.%E3%83%95%E3%82%A9%E3%83%B3%E3%83%88)
 - [MesloLGS NF Regular.ttf](
     https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)
 - [MesloLGS NF Bold.ttf](
@@ -64,7 +65,6 @@ Run the following command.
 ```
 
 ## Components
-
 
 ### Main
 
