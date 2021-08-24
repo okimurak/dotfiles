@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-source $(dirname $0)/../.profile
+base_dir=$(dirname $0)
+configure_path=$(pwd)/${base_dir}/
+source ${base_dir}/../.profile
 
 declare -a arr=(
   "3.7.0"
@@ -17,3 +19,5 @@ install() {
 install
 
 pyenv global 3.9.0
+
+pip install -r ${configure_path}requirements.txt
