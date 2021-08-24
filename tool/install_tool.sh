@@ -3,9 +3,9 @@
 base_dir="$(dirname $0)"
 
 declare -a arr=(
-  "go_install.sh"
-  "nodesettings.sh"
-  "markdownlint.sh"
+  "install_tool_to_brew.sh"
+  "install_node.sh"
+  "install_python.sh"
   )
 
 for tool_shell in "${arr[@]}"; do
