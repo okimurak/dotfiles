@@ -3,7 +3,7 @@
 source $(dirname $0)/../.profile
 
 declare -a arr=(
-  "assume-role"
+  "remind101/formulae/assume-role"
   "coreutils" # tac
   "gettext" # envsubst
   "go"
