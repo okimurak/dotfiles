@@ -15,6 +15,7 @@ declare -a arr=(
   "pyenv"
   "shellcheck"
   "tfenv"
+  "yq"
   )
 
 
