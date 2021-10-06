@@ -26,6 +26,22 @@ cat << EOF  > .gitconfig
 EOF
 ```
 
+- Create gitconfig for work, if need. (gitconfig_work)
+  - Use it when you want to separate Git accounts
+  - At this time, set gitconfig as follows.
+
+```bash
+cat << EOF  > .gitconfig
+[user]
+  name = <user name>
+  email = <email>
+[includeIf "gitdir:~/path/to/working/dir"]
+  path = ~/.gitconfig_work
+[include]
+  path = ~/.gitconfig_shared
+EOF
+```
+
 - Install
 
 Run the following command.

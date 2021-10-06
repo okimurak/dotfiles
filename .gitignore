@@ -2,6 +2,8 @@
 *~
 # Git
 .gitconfig
+## Working 
+.gitconfig_work
 # Ruby
 Gemfile.lock
 # Mac OS
