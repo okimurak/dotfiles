@@ -5,6 +5,7 @@ source $(dirname $0)/../.profile
 declare -a arr=(
   "remind101/formulae/assume-role"
   "coreutils" # tac
+  "cfn-lint"
   "gettext" # envsubst
   "go"
   "git-secrets"
@@ -13,6 +14,7 @@ declare -a arr=(
   "lazydocker"
   "peco"
   "pyenv"
+  "rain"
   "shellcheck"
   "tfenv"
   "yq"
