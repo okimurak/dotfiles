@@ -10,7 +10,8 @@
       "ja-space-around-code": {
         "before": true,
         "after": true
-      }
+      },
+      "ja-no-space-around-parentheses": false
     },
     "preset-ja-technical-writing": {
       "max-comma": {
