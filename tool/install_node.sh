@@ -30,7 +30,9 @@ npm install --save-dev \
     textlint-rule-preset-ja-spacing \
     textlint-rule-preset-ja-technical-writing \
     textlint-rule-spellcheck-tech-word \
-    textlint-rule-ja-space-between-half-and-full-width
+    textlint-rule-ja-space-between-half-and-full-width \
+    textlint-rule-ja-unnatural-alphabet \
+    textlint-rule-spelling dictionary-en
 
 # Initialize textlint
 npx textlint --init
