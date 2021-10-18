@@ -24,15 +24,9 @@ workspace=${lint_configure_path}../../
 echo "Mode workspace to ${workspace}"
 cd ${workspace}
 
-# install textlint compo
-npm install --save-dev \
-    textlint \
-    textlint-rule-preset-ja-spacing \
-    textlint-rule-preset-ja-technical-writing \
-    textlint-rule-spellcheck-tech-word \
-    textlint-rule-ja-space-between-half-and-full-width \
-    textlint-rule-ja-unnatural-alphabet \
-    textlint-rule-spelling dictionary-en
+# install textlint component
+ln -snf ${lint_configure_path}package.json package.json 
+npm install
 
 # Initialize textlint
 npx textlint --init
