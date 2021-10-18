@@ -25,7 +25,7 @@ echo "Mode workspace to ${workspace}"
 cd ${workspace}
 
 # install textlint component
-ln -snf ${lint_configure_path}package.json package.json 
+ln -snf ${lint_configure_path}package.json package.json
 npm install
 
 # Initialize textlint
