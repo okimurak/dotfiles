@@ -1,6 +1,9 @@
 {
   "filters": {},
   "rules": {
+    "common-misspellings": {
+      "ignore": []
+    },
     "ja-unnatural-alphabet": true,
     "preset-ja-spacing": {
       "ja-space-between-half-and-full-width": {
@@ -27,6 +30,7 @@
       "wordDefinitionRegexp": "/[\\w']+/g",
       "suggestCorrections": true
     },
-    "spellcheck-tech-word": true
+    "spellcheck-tech-word": true,
+    "textlint-rule-write-good": true
   }
 }
