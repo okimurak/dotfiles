@@ -28,7 +28,7 @@ EOF
 
 - Create gitconfig for work, if need. (gitconfig_work)
   - Use it when you want to separate Git accounts
-  - At this time, set gitconfig as follows.
+  - Set gitconfig as follows.
 
 ```bash
 cat << EOF  > .gitconfig
@@ -64,7 +64,7 @@ Please install the following font for your environment.
 - [MesloLGS NF Bold Italic.ttf](
     https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf)
 
-- Enjoy for doffile managements !
+- Enjoy for dotfiles management.
 
 ## Install Tool
 
@@ -87,7 +87,7 @@ Run the following command.
 - zsh
   - Prezto
     - Theme : [romkatv/powerlevel10](https://github.com/romkatv/powerlevel10)
-- [HomeBrew](https://docs.brew.sh/)
+- [Homebrew](https://docs.brew.sh/)
 - Git
 
 ### Tools
