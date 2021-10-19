@@ -4,6 +4,13 @@
     "common-misspellings": {
       "ignore": []
     },
+    "en-spell": {
+      "personalDictionary":[
+        "dotfiles",
+        "Homebrew",
+        "Prezto"
+      ]
+    },
     "ja-unnatural-alphabet": true,
     "preset-ja-spacing": {
       "ja-space-between-half-and-full-width": {
