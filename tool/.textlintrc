@@ -4,13 +4,6 @@
     "common-misspellings": {
       "ignore": []
     },
-    "en-spell": {
-      "personalDictionary":[
-        "dotfiles",
-        "Homebrew",
-        "Prezto"
-      ]
-    },
     "ja-unnatural-alphabet": true,
     "preset-ja-spacing": {
       "ja-space-between-half-and-full-width": {
@@ -30,12 +23,6 @@
       "max-kanji-continuous-len": {
         "max": 20
       }
-    },
-    "spelling": {
-      "language": "en",
-      "skipPatterns": ["JavaScript"],
-      "wordDefinitionRegexp": "/[\\w']+/g",
-      "suggestCorrections": true
     },
     "spellcheck-tech-word": true,
     "textlint-rule-write-good": true
