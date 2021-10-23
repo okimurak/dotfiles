@@ -17,9 +17,6 @@ setopt nonomatch
 # execute ls after cd
 chpwd() {ls}
 
-# pyenv config
-eval "$(pyenv init -)"
-
 # Theme
 source ~/.profile
 source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
@@ -60,9 +57,9 @@ function docker-search-tags() {
 
 # peco
 function peco-history-selection() {
-    BUFFER=`history -n 1 | tac  | awk '!a[$0]++' | peco`
-    CURSOR=$#BUFFER
-    zle reset-prompt
+  BUFFER=`history -n 1 | tac  | awk '!a[$0]++' | peco`
+  CURSOR=$#BUFFER
+  zle reset-prompt
 }
 
 zle -N peco-history-selection
