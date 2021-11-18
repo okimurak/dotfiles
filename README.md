@@ -95,7 +95,8 @@ Run the following command.
 - [ctop](https://github.com/bcicen/ctop) (from docker)
 - Go
 - node
-- markdownlint
+  - textlint plugins
+  - markdownlint
 - Python
 - Other
   - See [To Brew Shell](./tool/install_tool_to_brew.sh)
