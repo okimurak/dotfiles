@@ -6,22 +6,27 @@ declare -a arr=(
   "remind101/formulae/assume-role"
   "coreutils" # tac
   "cfn-lint"
+  "eksctl"
   "gettext" # envsubst
   "go"
   "git-secrets"
   "hadolint"
   "jq"
+  "kubectl"
+  "kubectx"
   "lazydocker"
   "peco"
   "pyenv"
   "rain"
   "shellcheck"
+  "stern"
   "tfenv"
   "yq"
   )
 
 
 install() {
+  brew tap weaveworks/tap
   for tool in "${arr[@]}"; do
     brew install ${tool}
   done
