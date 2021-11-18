@@ -6,6 +6,7 @@ declare -a arr=(
   "install_tool_to_brew.sh"
   "install_node.sh"
   "install_python.sh"
+  "install_completer.sh"
   )
 
 for tool_shell in "${arr[@]}"; do

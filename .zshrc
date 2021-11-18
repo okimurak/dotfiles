@@ -53,6 +53,17 @@ alias ctop='docker run --rm -ti \
   --volume /var/run/docker.sock:/var/run/docker.sock:ro \
   quay.io/vektorlab/ctop:latest'
 
+# ----------------- Completer ---------------------
+
+# awc cli
+complete -C '/usr/local/bin/aws_completer' aws
+
+# Docker
+fpath=(~/.zsh/completion $fpath)
+
+# kubectl
+source <(kubectl completion zsh)
+
 # ----------------- Function ---------------------
 function docker-search-tags() {
   curl -s -S "https://registry.hub.docker.com/v1/repositories/$1/tags" | jq '.[]["name"]'
