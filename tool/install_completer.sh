@@ -1,14 +1,11 @@
-
 #!/usr/bin/env bash
+
+## Setup completion dir
+mkdir -p ~/${fpath[1]}
 
 ## AWS CLI
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 
-## eksctl
-mkdir -p ~/.zsh/completion/
-eksctl completion zsh > ~/.zsh/completion/_eksctl
-
 ## docker-compose
-mkdir -p ~/.zsh/completion
-curl -L https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/zsh/_docker-compose > ~/.zsh/completion/_docker-compose
+curl -L https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/zsh/_docker-compose > "${fpath[1]}_docker-compose"

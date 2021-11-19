@@ -55,8 +55,14 @@ alias ctop='docker run --rm -ti \
 # awc cli
 complete -C '/usr/local/bin/aws_completer' aws
 
-# Docker
+# docker-compose
 fpath=(~/.zsh/completion $fpath)
+
+# eksctl
+source <(eksctl completion zsh)
+
+# helm
+source <(helm completion zsh)
 
 # kubectl
 source <(kubectl completion zsh)
