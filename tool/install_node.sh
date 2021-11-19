@@ -26,6 +26,7 @@ cd ${workspace}
 
 # install textlint component
 ln -snf ${lint_configure_path}package.json package.json
+ln -snf ${lint_configure_path}package-lock.json package-lock.json
 npm install
 
 # Initialize textlint
