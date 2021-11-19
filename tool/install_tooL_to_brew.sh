@@ -11,6 +11,7 @@ declare -a arr=(
   "go"
   "git-secrets"
   "hadolint"
+  "helm"
   "jq"
   "kubectl"
   "kubectx"
