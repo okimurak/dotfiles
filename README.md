@@ -47,7 +47,7 @@ EOF
 Run the following command.
 
 ```bash
-bin/main.sh install
+./script/main.sh install
 ```
 
 - Install Font
@@ -55,21 +55,17 @@ bin/main.sh install
 Please install the following font for your environment.
 
 - [DejaVu Sans Mono](https://ja.fonts2u.com/download/dejavu-sans-mono.%E3%83%95%E3%82%A9%E3%83%B3%E3%83%88)
-- [MesloLGS NF Regular.ttf](
-    https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)
-- [MesloLGS NF Bold.ttf](
-    https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf)
-- [MesloLGS NF Italic.ttf](
-    https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf)
-- [MesloLGS NF Bold Italic.ttf](
-    https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf)
+- [MesloLGS NF Regular.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)
+- [MesloLGS NF Bold.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf)
+- [MesloLGS NF Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf)
+- [MesloLGS NF Bold Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf)
 
 - Enjoy for dotfiles management.
 
 ## Install Tool
 
 ```bash
-./tool/install_tool.sh
+./tool/tool.sh install
 ```
 
 ## Uninstall
@@ -77,7 +73,8 @@ Please install the following font for your environment.
 Run the following command.
 
 ```bash
-bin/main.sh uninstall
+./tool/tool.sh uninstall
+./script/main.sh uninstall
 ```
 
 ## Components
