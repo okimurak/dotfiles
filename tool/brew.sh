@@ -18,10 +18,11 @@ declare -a arr=(
   "pyenv"
   "rain"
   "shellcheck"
+  "shfmt"
   "stern"
   "tfenv"
   "yq"
-  )
+)
 
 install() {
   brew tap weaveworks/tap

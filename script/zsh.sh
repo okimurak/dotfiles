@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 set -xe
 
-
 install() {
   # Install Prezto
   brew update
@@ -25,10 +24,10 @@ uninstall() {
 }
 
 usage() {
-	echo -e "$0\\n\\tThis script installs Homebrew\\n"
-	echo "Usage:"
-	echo "  install           : install zsh"
-	echo "  uninstall         : uninstall zsh"
+  echo -e "$0\\n\\tThis script installs Homebrew\\n"
+  echo "Usage:"
+  echo "  install           : install zsh"
+  echo "  uninstall         : uninstall zsh"
 }
 
 main() {

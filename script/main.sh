@@ -18,10 +18,10 @@ uninstall() {
 }
 
 usage() {
-	echo -e "$0\\n\\tThis script installs basic tools\\n"
-	echo "Usage:"
-	echo "  install           : install basic tools"
-	echo "  uninstall         : uninstall basic tools"
+  echo -e "$0\\n\\tThis script installs basic tools\\n"
+  echo "Usage:"
+  echo "  install           : install basic tools"
+  echo "  uninstall         : uninstall basic tools"
 }
 
 base_dir="$(dirname $0)"
@@ -30,7 +30,7 @@ declare -a arr=(
   "brew.sh"
   "config.sh"
   "zsh.sh"
-  )
+)
 
 main() {
   local cmd=$1

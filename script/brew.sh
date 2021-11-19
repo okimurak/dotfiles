@@ -11,10 +11,10 @@ uninstall() {
 }
 
 usage() {
-	echo -e "$0\\n\\tThis script installs Homebrew\\n"
-	echo "Usage:"
-	echo "  install           : install Homebrew"
-	echo "  uninstall         : uninstall Homebrew"
+  echo -e "$0\\n\\tThis script installs Homebrew\\n"
+  echo "Usage:"
+  echo "  install           : install Homebrew"
+  echo "  uninstall         : uninstall Homebrew"
 }
 
 main() {

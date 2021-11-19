@@ -4,12 +4,11 @@ set -ue
 
 install() {
   local dot_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")"/.. && pwd)"
-  for f in .??*
-  do
+  for f in .??*; do
     [[ $(basename "$f") == ".bin" ]] && continue
     [[ $(basename "$f") == ".git" ]] && continue
 
-    if [[ -L "$HOME/$f" ]];then
+    if [[ -L "$HOME/$f" ]]; then
       rm -f "$HOME/$f"
     fi
     ln -snf "$dot_dir/$f" "$HOME/$f"
@@ -19,45 +18,44 @@ install() {
 
 uninstall() {
   local dot_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")"/.. && pwd)"
-  for f in .??*
-  do
+  for f in .??*; do
     [[ $(basename "$f") == ".bin" ]] && continue
     [[ $(basename "$f") == ".git" ]] && continue
 
-    if [[ -L "$HOME/$f" ]];then
+    if [[ -L "$HOME/$f" ]]; then
       rm -f "$HOME/$f"
     fi
-   unlink "$HOME/$f"
+    unlink "$HOME/$f"
   done
 }
 
 usage() {
-	echo -e "$0\\n\\tThis script installs config files\\n"
-	echo "Usage:"
-	echo "  install           : install config"
-	echo "  uninstall         : uninstall config"
-	echo "  --debug | -d      : debug mode"
-	echo "  --help  | -h      : usage this script"
+  echo -e "$0\\n\\tThis script installs config files\\n"
+  echo "Usage:"
+  echo "  install           : install config"
+  echo "  uninstall         : uninstall config"
+  echo "  --debug | -d      : debug mode"
+  echo "  --help  | -h      : usage this script"
 }
 
-while [ $# -gt 0 ];do
+while [ $# -gt 0 ]; do
   case ${1} in
-    --debug|-d)
-      set -uex
-      ;;
-    --help|-h)
-      helpmsg
-      exit 1
-      ;;
-    install)
-      install
-      ;;
-    uninstall)
-      uninstall
-      ;;
-    *)
-      helpmsg
-      ;;
+  --debug | -d)
+    set -uex
+    ;;
+  --help | -h)
+    helpmsg
+    exit 1
+    ;;
+  install)
+    install
+    ;;
+  uninstall)
+    uninstall
+    ;;
+  *)
+    helpmsg
+    ;;
   esac
   shift
 done

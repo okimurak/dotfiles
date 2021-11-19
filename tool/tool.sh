@@ -7,9 +7,9 @@ declare -a arr=(
   "install_node.sh"
   "install_python.sh"
   "install_completer.sh"
-  )
+)
 
-install(){
+install() {
   for tool_shell in "${arr[@]}"; do
     ./"${base_dir}/${tool_shell}" install
   done

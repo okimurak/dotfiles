@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-install (){
-  # install nodebrew 
+install() {
+  # install nodebrew
   brew install nodebrew
 
   # settings nodebrew in workspace
@@ -31,7 +31,7 @@ install (){
   # initialize textlint
   npx textlint --init
   rm -f .textlintrc
-  ln -snf "${lint_configure_path}".textlintrc .textlintrc 
+  ln -snf "${lint_configure_path}".textlintrc .textlintrc
 
   # configure Markdown Lint(for VS Code : https://github.com/DavidAnson/vscode-markdownlint)
   ln -snf "${lint_configure_path}".markdownlint.jsonc .markdownlint.jsonc
