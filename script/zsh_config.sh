@@ -2,7 +2,6 @@
 set -xe
 
 # Install Prezto
-
 if [[ -e "${ZDOTDIR:-$HOME}/.zprezto" ]]; then
   rm -rf "${ZDOTDIR:-$HOME}/.zprezto"
 fi

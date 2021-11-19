@@ -47,7 +47,7 @@ EOF
 Run the following command.
 
 ```bash
-.bin/install.sh
+bin/main.sh install
 ```
 
 - Install Font
@@ -77,7 +77,7 @@ Please install the following font for your environment.
 Run the following command.
 
 ```bash
-.bin/uninstall.sh
+bin/main.sh uninstall
 ```
 
 ## Components
