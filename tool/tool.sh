@@ -5,7 +5,6 @@ base_dir="$(dirname $0)"
 declare -a arr=(
   "node.sh"
   "python.sh"
-  "completer.sh"
 )
 
 install() {
