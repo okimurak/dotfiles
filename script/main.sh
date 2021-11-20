@@ -24,8 +24,6 @@ usage() {
   echo "  uninstall         : uninstall basic tools"
 }
 
-base_dir="$(dirname $0)"
-
 declare -a arr=(
   "brew.sh"
   "config.sh"
@@ -35,6 +33,7 @@ declare -a arr=(
 main() {
   local cmd=$1
 
+  base_dir="$(dirname $0)"
   if [[ $cmd == "install" ]]; then
     install
   elif [[ $cmd == "uninstall" ]]; then

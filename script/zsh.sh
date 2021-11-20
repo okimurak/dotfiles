@@ -2,10 +2,6 @@
 set -xe
 
 install() {
-  # Install Prezto
-  brew update
-  brew install zsh
-
   # Change default shell
   command -v zsh | sudo tee -a /etc/shells
   sudo chsh -s "$(which zsh)"
@@ -15,12 +11,8 @@ install() {
 }
 
 uninstall() {
-  # prezto
-  rm -rf ~/.zprezto ~/.zlogin ~/.zlogout ~/.zpreztorc ~/.zprofile ~/.zshenv ~/.zshrc
-
-  # zsh
-  brew uninstall romkatv/powerlevel10k/powerlevel10k
-  brew uninstall zsh
+  # rremove zdh,prezto dotfiles
+  rm -rf ~/.zprezto ~/.zlogin ~/.zlogout ~/.zpreztorc ~/.zprofile
 }
 
 usage() {

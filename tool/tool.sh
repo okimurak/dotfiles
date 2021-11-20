@@ -3,7 +3,6 @@
 base_dir="$(dirname $0)"
 
 declare -a arr=(
-  "brew.sh"
   "node.sh"
   "python.sh"
   "completer.sh"
