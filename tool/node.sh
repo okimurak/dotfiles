@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 
 install() {
-  # install nodebrew
-  brew install nodebrew
-
   # settings nodebrew in workspace
   nodebrew setup
 
@@ -17,8 +14,7 @@ install() {
   npm -v
 
   # move workspace
-  base_dir=$(dirname $0)
-  lint_configure_path=$(pwd)/${base_dir}/
+  lint_configure_path=$(pwd)/$(dirname $0)/
   workspace=${lint_configure_path}../../
   echo "Move workspace to ${workspace}"
   cd "${workspace}" || exit

@@ -14,5 +14,4 @@ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
 done
 
 # Install Powerlevel10k(https://github.com/romkatv/powerlevel10k)
-brew install romkatv/powerlevel10k/powerlevel10k
 zstyle ':prezto:module:prompt' theme 'powerlevel10k'
