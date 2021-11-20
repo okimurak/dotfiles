@@ -25,8 +25,8 @@ usage() {
 }
 
 declare -a arr=(
-  "brew.sh"
   "config.sh"
+  "brew.sh"
   "zsh.sh"
 )
 

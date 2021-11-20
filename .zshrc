@@ -52,20 +52,8 @@ alias ctop='docker run --rm -ti \
 
 # ----------------- Completer ---------------------
 
-# awc cli
-complete -C '/usr/local/bin/aws_completer' aws
-
-# docker-compose
 fpath=(~/.zsh/completion $fpath)
-
-# eksctl
-source <(eksctl completion zsh)
-
-# helm
-source <(helm completion zsh)
-
-# kubectl
-source <(kubectl completion zsh)
+autoload -U compinit && compinit -u
 
 # ----------------- Function ---------------------
 function docker-search-tags() {

@@ -11,7 +11,7 @@ install() {
 }
 
 uninstall() {
-  # rremove zdh,prezto dotfiles
+  # remove zsh,prezto dotfiles
   rm -rf ~/.zprezto ~/.zlogin ~/.zlogout ~/.zpreztorc ~/.zprofile
 }
 
