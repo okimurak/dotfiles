@@ -60,6 +60,10 @@ function docker-search-tags() {
   curl -s -S "https://registry.hub.docker.com/v1/repositories/$1/tags" | jq '.[]["name"]'
 }
 
+function git-delete-other-mainbranch() {
+  git branch | grep -Ev "master|main" | xargs git branch -D
+}
+
 # peco
 function peco-history-selection() {
   BUFFER=`history -n 1 | tac  | awk '!a[$0]++' | peco`
