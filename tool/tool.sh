@@ -3,10 +3,10 @@
 base_dir="$(dirname $0)"
 
 declare -a arr=(
-  "install_tool_to_brew.sh"
-  "install_node.sh"
-  "install_python.sh"
-  "install_completer.sh"
+  "brew.sh"
+  "node.sh"
+  "python.sh"
+  "completer.sh"
 )
 
 install() {
