@@ -7,8 +7,9 @@ install() {
   dot_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")"/.. && pwd)"
   for f in .??*; do
     [[ $(basename "$f") == ".bin" ]] || \
-    [[ $(basename "$f") == ".markdownlint.jsonc" ]] || \
     [[ $(basename "$f") == ".git" ]] && \
+    [[ $(basename "$f") == ".markdownlint.jsonc" ]] || \
+    [[ $(basename "$f") == ".textlintrc" ]] && \
     continue
 
     if [[ -L "$HOME/$f" ]]; then
@@ -24,8 +25,9 @@ uninstall() {
   dot_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")"/.. && pwd)"
   for f in .??*; do
     [[ $(basename "$f") == ".bin" ]] || \
-    [[ $(basename "$f") == ".markdownlint.jsonc" ]] || \
     [[ $(basename "$f") == ".git" ]] && \
+    [[ $(basename "$f") == ".markdownlint.jsonc" ]] || \
+    [[ $(basename "$f") == ".textlintrc" ]] && \
     continue
 
     if [[ -L "$HOME/$f" ]]; then

@@ -29,6 +29,7 @@ declare -a arr=(
   "brew.sh"
   "zsh.sh"
   "python.sh"
+  "node.sh"
 )
 
 main() {
