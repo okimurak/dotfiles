@@ -4,10 +4,10 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-autopep8 = "==1.5.7"
 boto3 = "==1.18.23"
 
 [dev-packages]
+autopep8 = "==1.5.7"
 
 [requires]
 python_version = "3.9"

@@ -95,5 +95,7 @@ Run the following command.
   - textlint plugins
   - markdownlint
 - Python
+  - [pyenv](https://github.com/pyenv/pyenv)
+  - [Pipenv: 人間のためのPython開発ワークフロー — pipenv 2018.11.27.dev0 ドキュメント](https://pipenv-ja.readthedocs.io/ja/translate-ja/)
 - Other
-  - See [To Brew Shell](./tool/install_tool_to_brew.sh)
+  - See [To Brew Shell](.Brewfile)
