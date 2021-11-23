@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -xe
+
 install() {
   source "${base_dir}/../.profile"
 
@@ -44,3 +46,5 @@ main() {
     usage
   fi
 }
+
+main "$@"
