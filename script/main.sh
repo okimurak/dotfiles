@@ -28,6 +28,7 @@ declare -a arr=(
   "config.sh"
   "brew.sh"
   "zsh.sh"
+  "python.sh"
 )
 
 main() {
