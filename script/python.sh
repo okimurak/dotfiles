@@ -2,7 +2,6 @@
 
 declare -a arr=(
   "3.7.0"
-  "3.8.0"
   "3.9.0"
 )
 
@@ -10,12 +9,14 @@ install() {
   for pyver in "${arr[@]}"; do
     pyenv install -f "${pyver}"
   done
+  source "${base_dir}"/../.profile
   pyenv global 3.9.0
-  pip install -r "${configure_path}"requirements.txt
+  pipenv --python 3.9
+  cd "${base_dir}"/.. && pipenv install
 }
 
 uninstall() {
-  pip uninstall -r "${configure_path}"requirements.txt
+  cd "${base_dir}"/.. && pipenv uninstall --all
 
   for pyver in "${arr[@]}"; do
     pyenv uninstall -f "${pyver}"
@@ -32,7 +33,6 @@ usage() {
 main() {
   local cmd=$1
   base_dir=$(dirname $0)
-  configure_path=$(pwd)/${base_dir}/
   source "${base_dir}"/../.profile
 
   if [[ $cmd == "install" ]]; then

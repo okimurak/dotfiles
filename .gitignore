@@ -5,7 +5,9 @@
 ## Working 
 .gitconfig_work
 # Ruby
-Gemfile.lock
+Gemfile.loc
+# Python
+Pipfile.lock
 # Mac OS
 .DS_Store
 # Windows
