@@ -3,10 +3,14 @@
 set -ue
 
 install() {
-  local dot_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")"/.. && pwd)"
+  local dot_dir
+  dot_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")"/.. && pwd)"
   for f in .??*; do
-    [[ $(basename "$f") == ".bin" ]] && continue
-    [[ $(basename "$f") == ".git" ]] && continue
+    [[ $(basename "$f") == ".bin" ]] || \
+    [[ $(basename "$f") == ".git" ]] && \
+    [[ $(basename "$f") == ".markdownlint.jsonc" ]] || \
+    [[ $(basename "$f") == ".textlintrc" ]] && \
+    continue
 
     if [[ -L "$HOME/$f" ]]; then
       rm -f "$HOME/$f"
@@ -17,15 +21,18 @@ install() {
 }
 
 uninstall() {
-  local dot_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")"/.. && pwd)"
+  local dot_dir
+  dot_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")"/.. && pwd)"
   for f in .??*; do
-    [[ $(basename "$f") == ".bin" ]] && continue
-    [[ $(basename "$f") == ".git" ]] && continue
+    [[ $(basename "$f") == ".bin" ]] || \
+    [[ $(basename "$f") == ".git" ]] && \
+    [[ $(basename "$f") == ".markdownlint.jsonc" ]] || \
+    [[ $(basename "$f") == ".textlintrc" ]] && \
+    continue
 
     if [[ -L "$HOME/$f" ]]; then
-      rm -f "$HOME/$f"
+      unlink "$HOME/$f"
     fi
-    unlink "$HOME/$f"
   done
 }
 

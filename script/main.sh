@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -xe
+
 install() {
   source "${base_dir}/../.profile"
 
@@ -29,6 +31,7 @@ declare -a arr=(
   "brew.sh"
   "zsh.sh"
   "python.sh"
+  "node.sh"
 )
 
 main() {
@@ -43,3 +46,5 @@ main() {
     usage
   fi
 }
+
+main "$@"
