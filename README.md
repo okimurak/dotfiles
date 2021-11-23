@@ -65,7 +65,13 @@ Please install the following font for your environment.
 ## Install Tool
 
 ```bash
-./tool/tool.sh install
+make install
+```
+
+### WSL configure
+
+```bash
+make install-wsl
 ```
 
 ## Uninstall
@@ -73,8 +79,19 @@ Please install the following font for your environment.
 Run the following command.
 
 ```bash
-./tool/tool.sh uninstall
-./script/main.sh uninstall
+make clean
+```
+
+### WSL
+
+```bash
+make clean-wsl
+```
+
+## Update
+
+```bash
+make update
 ```
 
 ## Components

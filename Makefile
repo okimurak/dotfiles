@@ -21,6 +21,9 @@ install-tool:
 	./script/node.sh install
 	./script/completer.sh install
 
+install-wsl:
+	./script/wsl.sh
+
 clean: uninstall uninstall-dotfile
 
 clean-dotfile:
@@ -31,5 +34,8 @@ clean-tool:
 	./script/python.sh uninstall
 	./script/zsh.sh uninstall
 	./script/brew.sh uninstall
+
+clean-wsl:
+	./script/wsl.sh
 
 update: clean-dotfile install-dotfile

@@ -79,3 +79,11 @@ bindkey '^R' peco-history-selection
 export GOPATH=$(go env GOPATH)
 # nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+
+# ----------------- OS ---------------------
+
+# WSL 用
+if [[ "$(uname -r)" == *microsoft* ]]; then
+  export PATH=$PATH:$HOME/.windows_commands
+fi
