@@ -4,7 +4,7 @@
     "common-misspellings": {
       "ignore": []
     },
-    "ja-unnatural-alphabet": true,
+    
     "preset-ja-spacing": {
       "ja-space-between-half-and-full-width": {
         "space": "always",
@@ -22,9 +22,12 @@
       },
       "max-kanji-continuous-len": {
         "max": 20
-      }
+      },
+      "ja-unnatural-alphabet": true
     },
     "spellcheck-tech-word": true,
-    "textlint-rule-write-good": true
+    "write-good": {
+      "passive": false
+    }
   }
 }
