@@ -7,3 +7,4 @@ eval $($(brew --prefix)/bin/brew shellenv)
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+export JAVA_TOOLS_OPTIONS="-DLog4j2.formatMsgNoLookups=true"
