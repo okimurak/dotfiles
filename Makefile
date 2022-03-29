@@ -38,4 +38,9 @@ clean-tool:
 clean-wsl:
 	./script/wsl.sh
 
-update: clean-dotfile install-dotfile
+update: update-dotfile update-tool
+
+update-dotfile: clean-dotfile install-dotfile
+
+update-tool:
+	./script/brew.sh update

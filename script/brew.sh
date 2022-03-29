@@ -18,10 +18,15 @@ uninstall() {
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
 }
 
+update() {
+  brew bundle --global
+}
+
 usage() {
   echo -e "$0\\n\\tThis script installs Homebrew\\n"
   echo "Usage:"
   echo "  install           : install Homebrew"
+  echo "  update            : update tools from Homebrew"
   echo "  uninstall         : uninstall Homebrew"
 }
 
@@ -32,6 +37,8 @@ main() {
     install
   elif [[ $cmd == "uninstall" ]]; then
     uninstall
+  elif [[ $cmd == "update" ]]; then
+    update
   else
     usage
   fi
