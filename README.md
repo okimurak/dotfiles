@@ -26,21 +26,7 @@ cat << EOF  > .gitconfig
 EOF
 ```
 
-- Create gitconfig for work, if need. (gitconfig_work)
-  - Use it when you want to separate Git accounts
-  - Set gitconfig as follows.
-
-```bash
-cat << EOF  > .gitconfig
-[user]
-  name = <user name>
-  email = <email>
-[includeIf "gitdir:~/path/to/working/dir"]
-  path = ~/.gitconfig_work
-[include]
-  path = ~/.gitconfig_shared
-EOF
-```
+If you should set work settings for Git, see [working settings](#git).
 
 - Install
 
@@ -116,3 +102,30 @@ make update
   - [Pipenv: 人間のためのPython開発ワークフロー — pipenv 2018.11.27.dev0 ドキュメント](https://pipenv-ja.readthedocs.io/ja/translate-ja/)
 - Other
   - See [To Brew Shell](.Brewfile)
+
+## Work settings
+
+If you need setting for work setting, you can add setting or files for work setting.
+
+### Git
+
+Create gitconfig for work (`gitconfig_work`), if need.
+
+- Use it when you want to separate Git accounts
+- Set gitconfig as follows.
+
+```bash
+cat << EOF  > .gitconfig
+[user]
+  name = <user name>
+  email = <email>
+[includeIf "gitdir:~/path/to/working/dir"]
+  path = ~/.gitconfig_work
+[include]
+  path = ~/.gitconfig_shared
+EOF
+```
+
+### zsh
+
+You can create or edit `.zsh_work` to use work settings.

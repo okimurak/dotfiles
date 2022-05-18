@@ -13,3 +13,5 @@ Pipfile.lock
 # Windows
 Thumbs.db
 .windows_commands/**
+# zsh
+.zshrc_work
