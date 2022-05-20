@@ -128,4 +128,4 @@ EOF
 
 ### zsh
 
-You can create or edit `.zsh_work` to use work settings.
+You can create or edit `.zshrc_work` to use work settings.
