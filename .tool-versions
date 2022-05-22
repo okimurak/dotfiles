@@ -1,0 +1,12 @@
+# asdf manages only the tool which you switch and use between.
+# Ref : https://asdf-vm.com/manage/configuration.html#tool-versions
+
+aws-sam-cli 1.50.0
+deno 1.22.0
+eksctl 0.98.0
+golang 1.17.2
+kubectl 1.24.0
+kubectx 0.9.4
+nodejs 18.2.0 lts-gallium # lts-gallium is 16 LTS version. https://nodejs.org/ja/about/releases/
+python 3.9.10
+terraform 1.1.9

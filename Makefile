@@ -15,6 +15,7 @@ install-dotfile:
 	@$(foreach val, $(DOTFILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
 
 install-tool:
+	./script/asdf.sh install
 	./script/brew.sh install
 	./script/zsh.sh install
 	./script/python.sh install
@@ -34,6 +35,7 @@ clean-tool:
 	./script/python.sh uninstall
 	./script/zsh.sh uninstall
 	./script/brew.sh uninstall
+	./script/asdf.sh uninstall
 
 clean-wsl:
 	./script/wsl.sh

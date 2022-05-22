@@ -1,6 +1,6 @@
 # dotfiles
 
-Setup dotfiles on Homebrew.
+Setup dotfiles and each tool settings on [asdf](https://asdf-vm.com/) and [Homebrew](https://docs.brew.sh/).
 
 ## Requirement
 
@@ -33,7 +33,7 @@ If you should set work settings for Git, see [working settings](#git).
 Run the following command.
 
 ```bash
-./script/main.sh install
+make install
 ```
 
 - Install Font
@@ -48,10 +48,10 @@ Please install the following font for your environment.
 
 - Enjoy for dotfiles management.
 
-## Install Tool
+### Tool
 
 ```bash
-make install
+make install-tool
 ```
 
 ### WSL configure
@@ -68,6 +68,12 @@ Run the following command.
 make clean
 ```
 
+### Tool
+
+```bash
+make clean-tool
+```
+
 ### WSL
 
 ```bash
@@ -80,28 +86,30 @@ make clean-wsl
 make update
 ```
 
-## Components
+## Constitution
 
-### Main
+- Git
+
+## Package Manager
+
+- [asdf](https://asdf-vm.com/)
+  - About install package, please see [.tool-version by asdf](.tool-version).
+- [Homebrew](https://docs.brew.sh/)
+  - About install package, please see [.Brewfile by HomeBrew](.Brewfile)
+
+### Shell
 
 - zsh
-  - Prezto
-    - Theme : [romkatv/powerlevel10](https://github.com/romkatv/powerlevel10)
-- [Homebrew](https://docs.brew.sh/)
-- Git
+  - [Prezto](https://github.com/sorin-ionescu/prezto) (Theme : [romkatv/powerlevel10](https://github.com/romkatv/powerlevel10))
 
 ### Tools
 
 - [ctop](https://github.com/bcicen/ctop) (from docker)
-- Go
-- node
+- [Node.js](https://nodejs.org/ja/)
   - textlint plugins
-  - markdownlint
-- Python
-  - [pyenv](https://github.com/pyenv/pyenv)
+  - [markdownlint](https://github.com/DavidAnson/markdownlint)
+- Python (asdf-plugin used by [pyenv](https://github.com/pyenv/pyenv))
   - [Pipenv: 人間のためのPython開発ワークフロー — pipenv 2018.11.27.dev0 ドキュメント](https://pipenv-ja.readthedocs.io/ja/translate-ja/)
-- Other
-  - See [To Brew Shell](.Brewfile)
 
 ## Work settings
 
