@@ -18,8 +18,8 @@ install-tool:
 	./script/asdf.sh install
 	./script/brew.sh install
 	./script/zsh.sh install
-	./script/python.sh install
-	./script/node.sh install
+	./script/pip.sh install
+	./script/npm.sh install
 	./script/completer.sh install
 
 install-wsl:
@@ -31,8 +31,8 @@ clean-dotfile:
 	@$(foreach val, $(DOTFILES), rm -vrf $(HOME)/$(val);)
 
 clean-tool:
-	./script/node.sh uninstall
-	./script/python.sh uninstall
+	./script/npm.sh uninstall
+	./script/pip.sh uninstall
 	./script/zsh.sh uninstall
 	./script/brew.sh uninstall
 	./script/asdf.sh uninstall
