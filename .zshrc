@@ -1,34 +1,33 @@
+# ----------------- Application ---------------------
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
-# ----------------- Utility ---------------------
-# Source Prezto.
+# Prezto
+# Should stay here.
+# Bacause the following command has to need except here.
+# # Finalize for p10k
+# (( ! ${+functions[p10k]} )) || p10k finalize
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
-
-# No deployment blob
-setopt nonomatch
-
-# execute ls after cd
-chpwd() {ls}
-
-# Theme
-source ~/.profile
-source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # asdf
 . $HOME/.asdf/asdf.sh
 
-# setopt
-unsetopt correctall
+# General
+source ~/.profile
+setopt nonomatch    # No deployment blob
+
+# Execute "ls" after "cd"
+chpwd() {ls}
+
+# Theme
+source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 # ----------------- Alias ---------------------
 
@@ -48,7 +47,7 @@ alias dcls='docker container ls -a'
 alias dcprune='docker container prune'
 
 # Kubernetes Operation
-alias kc='kubectl'
+alias k='kubectl'
 
 # ctop(https://github.com/bcicen/ctop)
 alias ctop='docker run --rm -ti \
@@ -82,20 +81,12 @@ function peco-history-selection() {
 zle -N peco-history-selection
 bindkey '^R' peco-history-selection
 
-# ----------------- Variable ---------------------
-# go
+# ------------------ Environment Variable ---------------------
+# Here defines environment variables except it is generally defined on .zshenv.
+# Example : Environment variable of application installed by asdf.
+
+# Go
 export GOPATH=$(go env GOPATH)
-# nodebrew
-export PATH=$HOME/.nodebrew/current/bin:$PATH
-
-
-# ----------------- OS ---------------------
-
-# WSL 用
-if [[ "$(uname -r)" == *microsoft* ]]; then
-  export PATH=$PATH:$HOME/.windows_commands
-fi
-export JAVA_TOOLS_OPTIONS="-Dlog4j2.formatMsgNoLookups=true"
 
 # ------------------ Work -----------------
 source ~/.zshrc_work
