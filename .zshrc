@@ -24,6 +24,12 @@ source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# asdf
+. $HOME/.asdf/asdf.sh
+
+# setopt
+unsetopt correctall
+
 # ----------------- Alias ---------------------
 
 # alies Config
@@ -53,6 +59,8 @@ alias ctop='docker run --rm -ti \
 # ----------------- Completer ---------------------
 
 fpath=(~/.zsh/completion $fpath)
+## append completions to fpath for asdf
+fpath=(${ASDF_DIR}/completions $fpath)
 autoload -U compinit && compinit -u
 
 # ----------------- Function ---------------------
@@ -66,7 +74,7 @@ function git-delete-other-mainbranch() {
 
 # peco
 function peco-history-selection() {
-  BUFFER=`history -n 1 | tac  | awk '!a[$0]++' | peco`
+  BUFFER=`history -n 1 | tac | awk '!a[$0]++' | peco`
   CURSOR=$#BUFFER
   zle reset-prompt
 }

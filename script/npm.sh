@@ -1,18 +1,6 @@
 #!/usr/bin/env bash
 
 install() {
-  # settings nodebrew in workspace
-  nodebrew setup
-
-  # install node from nodebrew
-  nodebrew install-binary stable
-  nodebrew use stable
-  export PATH=$HOME/.nodebrew/current/bin:$PATH
-
-  # check node
-  node -v
-  npm -v
-
   # move workspace
   lint_configure_path=$(pwd)/$(dirname $0)/
   workspace=${lint_configure_path}../../
@@ -44,14 +32,12 @@ uninstall() {
   unlink package-lock.json
   unlink .textlintrc
   unlink .markdownlint.jsonc
-
-  nodebrew clean all
 }
 
 usage() {
-  echo -e "$0\\n\\tThis script installs nodejs\\n"
+  echo -e "$0\\n\\tThis script installs npm\\n"
   echo "Usage:"
-  echo "  install           : install nodejs"
+  echo "  install           : install npm tool"
 }
 
 main() {

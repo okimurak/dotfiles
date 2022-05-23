@@ -14,6 +14,8 @@ EOF
   fi
   cd ${configure_path} || exit
 
+  # clip
+  ln -s "/mnt/c/Windows/System32/clip.exe"
   # Docker Desktop for Windows
   ln -s "/mnt/c/Program Files/Docker/Docker/resources/bin/docker-credential-desktop.exe"
   # PowerShell
