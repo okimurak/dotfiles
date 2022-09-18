@@ -45,4 +45,5 @@ update: update-dotfile update-tool
 update-dotfile: clean-dotfile install-dotfile
 
 update-tool:
+	./script/asdf.sh update
 	./script/brew.sh update

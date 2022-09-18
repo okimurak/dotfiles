@@ -44,6 +44,11 @@ uninstall() {
   rm -rf "${HOME}"/.tool-versions "${HOME}"/.asdfrc
 }
 
+update() {
+  add-plugin
+  asdf install
+}
+
 usage() {
   echo -e "$0\\n\\tThis script installs asdf and asdf plugins\\n"
   echo "Usage:"
@@ -58,6 +63,8 @@ main() {
     install
   elif [[ $cmd == "uninstall" ]]; then
     uninstall
+  elif [[ $cmd == "update" ]]; then
+    update
   else
     usage
   fi
