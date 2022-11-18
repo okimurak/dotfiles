@@ -1,7 +1,7 @@
 # asdf manages only the tool which you switch and use between.
 # Ref : https://asdf-vm.com/manage/configuration.html#tool-versions
 
-aws-sam-cli 1.50.0
+aws-sam-cli 1.58.0
 deno 1.22.0
 eksctl 0.110.0
 golang 1.17.2
