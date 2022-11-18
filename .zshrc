@@ -67,6 +67,10 @@ function docker-search-tags() {
   curl -s -S "https://registry.hub.docker.com/v1/repositories/$1/tags" | jq '.[]["name"]'
 }
 
+function docker-delete-all-images() {
+  docker images | awk 'NR>1 {print $1 ":" $2}' | xargs docker image rm
+}
+
 function git-delete-other-mainbranch() {
   git branch | grep -Ev "master|main" | xargs git branch -D
 }
