@@ -89,6 +89,22 @@ function peco-history-selection() {
 zle -N peco-history-selection
 bindkey '^R' peco-history-selection
 
+function s3-delete-all-version() {
+  # "${1}" : bucket name
+  aws s3api list-object-versions --bucket "${1}" --query 'Versions[?IsLatest==`true`].[Key,VersionId]' --output text | while read -r KEY VER
+  do
+    aws s3api delete-object --bucket "${1}" --key "${KEY}" --version-id "${VER}"
+  done
+  aws s3api list-object-versions --bucket "${1}" --query 'Versions[?IsLatest==`false`].[Key,VersionId]' --output text | while read -r KEY VER
+  do
+    aws s3api delete-object --bucket "${1}" --key "${KEY}" --version-id "${VER}"
+  done
+  aws s3api list-object-versions --bucket "${1}" --query 'DeleteMarkers[?IsLatest==`true`].[Key,VersionId]' --output text | while read -r KEY VER
+  do
+    aws s3api delete-object --bucket "${1}" --key "${KEY}" --version-id "${VER}"
+  done
+}
+
 # ------------------ Environment Variable ---------------------
 # Here defines environment variables except it is generally defined on .zshenv.
 # Example : Environment variable of application installed by asdf.
