@@ -75,6 +75,10 @@ function git-delete-other-mainbranch() {
   git branch | grep -Ev "master|main" | xargs git branch -D
 }
 
+function kc() {
+  kubectx | peco | xargs kubectx
+}
+
 # peco
 function peco-history-selection() {
   BUFFER=`history -n 1 | tac | awk '!a[$0]++' | peco`
