@@ -94,7 +94,7 @@ make update
 ### Shell
 
 - zsh
-  - [Prezto](https://github.com/sorin-ionescu/prezto) (Theme : [romkatv/powerlevel10k:](https://github.com/romkatv/powerlevel10k))
+  - [Prezto](https://github.com/sorin-ionescu/prezto) (Theme : [romkatv/powerlevel10k](https://github.com/romkatv/powerlevel10k))
 
 ### Tools
 
