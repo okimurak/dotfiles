@@ -8,13 +8,13 @@ Setup dotfiles and each tool settings on [asdf](https://asdf-vm.com/) and [Homeb
 
 ## Install
 
-- Clone this repository
+Clone this repository
 
 ```bash
-git clone https://github.com/okimurak/dotfiles_mac.git
+git clone https://github.com/okimurak/dotfiles.git
 ```
 
-- Create gitconfig (Inplace `username` and `email`)
+Create gitconfig (Replace `username` and `email`). If you should set work settings for Git, see [working settings](#git).
 
 ```bash
 cat << EOF  > .gitconfig
@@ -26,17 +26,13 @@ cat << EOF  > .gitconfig
 EOF
 ```
 
-If you should set work settings for Git, see [working settings](#git).
-
-- Install
-
 Run the following command.
 
 ```bash
 make install
 ```
 
-- Install Font
+### Install Font
 
 Please install the following font for your environment.
 
@@ -46,9 +42,9 @@ Please install the following font for your environment.
 - [MesloLGS NF Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf)
 - [MesloLGS NF Bold Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf)
 
-- Enjoy for dotfiles management.
+Enjoy for dotfiles management.
 
-### Tool
+### Install Tool
 
 ```bash
 make install-tool
@@ -88,9 +84,7 @@ make update
 
 ## Constitution
 
-- Git
-
-## Package Manager
+### Package Manager
 
 - [asdf](https://asdf-vm.com/)
   - About install package, please see [.tool-version by asdf](.tool-version).
@@ -100,10 +94,11 @@ make update
 ### Shell
 
 - zsh
-  - [Prezto](https://github.com/sorin-ionescu/prezto) (Theme : [romkatv/powerlevel10](https://github.com/romkatv/powerlevel10))
+  - [Prezto](https://github.com/sorin-ionescu/prezto) (Theme : [romkatv/powerlevel10k:](https://github.com/romkatv/powerlevel10k))
 
 ### Tools
 
+- Git
 - [ctop](https://github.com/bcicen/ctop) (from docker)
 - [Node.js](https://nodejs.org/ja/)
   - textlint plugins
