@@ -3,6 +3,7 @@
 # ref : https://asdf-vm.com/manage/core.html#installation-setup
 
 add-plugin() {
+  asdf plugin add awscli https://github.com/MetricMike/asdf-awscli.git
   asdf plugin add aws-sam-cli https://github.com/amrox/asdf-pyapp.git
   asdf plugin-add deno https://github.com/asdf-community/asdf-deno.git
   asdf plugin-add eksctl https://github.com/elementalvoid/asdf-eksctl.git

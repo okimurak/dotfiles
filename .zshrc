@@ -62,6 +62,10 @@ fpath=(~/.zsh/completion $fpath)
 fpath=(${ASDF_DIR}/completions $fpath)
 autoload -U compinit && compinit -u
 
+## aws cli
+autoload -U bashcompinit && bashcompinit
+complete -C '${HOME}/.asdf/shims/aws_completer' aws
+
 # ----------------- Function ---------------------
 function docker-search-tags() {
   curl -s -S "https://registry.hub.docker.com/v1/repositories/$1/tags" | jq '.[]["name"]'
