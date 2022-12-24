@@ -17,7 +17,7 @@ install() {
   curl -o https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh >"${workspace}/.zsh/completion/_git"
 
   ## helm
-  helm completion zsh >"${workspace}/.zsh/completion/_eksctl"
+  helm completion zsh >"${workspace}/.zsh/completion/_helm"
 
   ## kubectl
   kubectl completion zsh >"${workspace}/.zsh/completion/_kubectl"
