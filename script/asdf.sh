@@ -18,7 +18,7 @@ add-plugin() {
 }
 
 install() {
-  ASDF_VERSION=v0.10.0
+  ASDF_VERSION=v0.11.1
   git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch "${ASDF_VERSION}"
   . "${HOME}"/.asdf/asdf.sh
 
@@ -46,6 +46,7 @@ uninstall() {
 }
 
 update() {
+  asdf update
   add-plugin
   asdf install
 }
