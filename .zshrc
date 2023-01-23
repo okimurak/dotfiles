@@ -17,7 +17,7 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # asdf
-. $HOME/.asdf/asdf.sh
+. "${HOME}"/.asdf/asdf.sh
 
 # General
 source ~/.profile
@@ -60,10 +60,10 @@ alias ctop='docker run --rm -ti \
 fpath=(~/.zsh/completion $fpath)
 ## append completions to fpath for asdf
 fpath=(${ASDF_DIR}/completions $fpath)
-autoload -U compinit && compinit -u
 
 ## aws cli
 autoload -U bashcompinit && bashcompinit
+autoload -Uz compinit && compinit
 complete -C '${HOME}/.asdf/shims/aws_completer' aws
 
 # ----------------- Function ---------------------
