@@ -11,7 +11,6 @@ brew "jq"
 brew "lazydocker"
 brew "moreutils" # to use "sponge" command
 brew "peco"
-brew "pipenv"
 brew "rain"
 brew "shellcheck"
 brew "shfmt"
