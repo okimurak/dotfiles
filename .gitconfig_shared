@@ -1,6 +1,8 @@
 [core]
 	editor = vi
 	quotepath = false
+[init]
+	defaultBranch = main
 [rebase]
   autostash = true
 [alias]
