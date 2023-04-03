@@ -7,19 +7,19 @@ install() {
   source "$(dirname $0)"/../.profile "$(dirname $0)"/../.bash_profile
 
   # Add package
-  brew bundle --global
+  brew bundle --file "$(dirname $0)"/../.Brewfile
 }
 
 uninstall() {
   # Remove package
-  brew bundle cleanup --global --force
+  brew bundle cleanup --file "$(dirname $0)"/../.Brewfile --force 
 
   # Reference https://github.com/homebrew/install#uninstall-homebrew
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
 }
 
 update() {
-  brew bundle --global
+  brew bundle --file "$(dirname $0)"/../.Brewfile
 }
 
 usage() {
