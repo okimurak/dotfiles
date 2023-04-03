@@ -5,17 +5,9 @@ brew "cfn-lint"
 brew "coreutils" # to use "tac" command for the peco-history-selection function.
 brew "gettext" # envsubst
 brew "git-secrets"
-brew "hadolint"
-brew "helm"
-brew "jq"
 brew "lazydocker"
 brew "moreutils" # to use "sponge" command
-brew "peco"
 brew "rain"
-brew "shellcheck"
-brew "shfmt"
-brew "stern"
 brew "texinfo"
-brew "yq"
 brew "zsh"
 brew "romkatv/powerlevel10k/powerlevel10k"
