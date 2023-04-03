@@ -2,7 +2,7 @@
 
 install() {
   # Replace install
-  workspace="$(dirname $0)"../
+  workspace="$(dirname $0)"/..
 
   rm -rf "${workspace}/.zsh/completion/*"
 
@@ -13,8 +13,8 @@ install() {
   eksctl completion zsh >"${workspace}/.zsh/completion/_eksctl"
 
   ## Git
-  curl -o git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash >"${workspace}/.zsh/completion/git-completion.bash"
-  curl -o https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh >"${workspace}/.zsh/completion/_git"
+  curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash >"${workspace}/.zsh/completion/git-completion.bash"
+  curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh >"${workspace}/.zsh/completion/_git"
 
   ## helm
   helm completion zsh >"${workspace}/.zsh/completion/_helm"

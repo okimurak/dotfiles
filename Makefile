@@ -6,7 +6,7 @@ DOTFILES   := $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 
 default: update
 
-install: install-dotfile install-tool install-completer
+install: install-tool install-dotfile install-completer
 
 install-completer:
 	./script/completer.sh install

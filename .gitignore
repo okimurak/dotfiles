@@ -1,5 +1,7 @@
 # General
 *~
+# HomeBrew
+.Brewfile.lock.json
 # Git
 .gitconfig
 ## Working 
