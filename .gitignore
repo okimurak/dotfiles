@@ -6,6 +6,8 @@
 .gitconfig
 ## Working 
 .gitconfig_work
+# npm
+node_modules
 # Ruby
 Gemfile.loc
 # Python
@@ -17,3 +19,4 @@ Thumbs.db
 .windows_commands/**
 # zsh
 .zshrc_work
+.zsh/completion/**
