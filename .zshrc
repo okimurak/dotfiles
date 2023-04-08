@@ -29,12 +29,6 @@ alias dcprune='docker container prune'
 # Kubernetes Operation
 alias k='kubectl'
 
-# ctop(https://github.com/bcicen/ctop)
-alias ctop='docker run --rm -ti \
-  --name=ctop \
-  --volume /var/run/docker.sock:/var/run/docker.sock:ro \
-  quay.io/vektorlab/ctop:latest'
-
 # ----------------- Completer ---------------------
 
 fpath=(~/.zsh/completion $fpath)
@@ -65,9 +59,9 @@ function kc() {
 
 # peco
 function peco-history-selection() {
-  BUFFER=`history -n 1 | tac | awk '!a[$0]++' | peco`
+  BUFFER=`history -n 1 | tac | awk '!a[$0]++' | peco --query "$LBUFFER" | sed 's/\\n/\n/'`
   CURSOR=$#BUFFER
-  zle reset-prompt
+  zle -R -c
 }
 
 zle -N peco-history-selection

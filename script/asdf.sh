@@ -7,6 +7,7 @@ add-plugin() {
   asdf plugin add aws-copilot https://github.com/NeoHsu/asdf-copilot.git
   asdf plugin add awsebcli https://github.com/amrox/asdf-pyapp.git
   asdf plugin add aws-sam-cli https://github.com/amrox/asdf-pyapp.git
+  asdf plugin add ctop https://github.com/neohsu/asdf-ctop.git
   asdf plugin-add deno https://github.com/asdf-community/asdf-deno.git
   asdf plugin-add eksctl https://github.com/elementalvoid/asdf-eksctl.git
   asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
