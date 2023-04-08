@@ -86,7 +86,7 @@ make update
 
 ### Package Manager
 
-- [asdf](https://asdf-vm.com/)
+- [rtx](https://github.com/jdxcode/rtx)
   - About install package, please see [.tool-version by asdf](.tool-version).
 - [Homebrew](https://docs.brew.sh/)
   - About install package, please see [.Brewfile by HomeBrew](.Brewfile)
@@ -94,12 +94,11 @@ make update
 ### Shell
 
 - zsh
-  - [Prezto](https://github.com/sorin-ionescu/prezto) (Theme : [romkatv/powerlevel10k](https://github.com/romkatv/powerlevel10k))
+  - [Starship](https://starship.rs/)
 
 ### Tools
 
 - Git
-- [ctop](https://github.com/bcicen/ctop) (from docker)
 - [Node.js](https://nodejs.org/ja/)
   - textlint plugins
   - [markdownlint](https://github.com/DavidAnson/markdownlint)
