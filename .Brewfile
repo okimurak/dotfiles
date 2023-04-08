@@ -7,6 +7,7 @@ brew "git-secrets"
 brew "lazydocker"
 brew "moreutils" # to use "sponge" command
 brew "rain"
+brew "jdxcode/tap/rtx"
 brew "starship"
 brew "texinfo"
 brew "zsh"

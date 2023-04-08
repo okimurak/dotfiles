@@ -1,13 +1,13 @@
 # ----------------- Application ---------------------
-# asdf
-. "${HOME}"/.asdf/asdf.sh
-
 # General
 source ~/.profile
 setopt nonomatch    # No deployment blob
 
 # Execute "ls" after "cd"
 chpwd() {ls}
+
+# rtx
+eval "$($(brew --prefix)/bin/rtx activate zsh)"
 
 # ----------------- Alias ---------------------
 
@@ -32,8 +32,6 @@ alias k='kubectl'
 # ----------------- Completer ---------------------
 
 fpath=(~/.zsh/completion $fpath)
-## append completions to fpath for asdf
-fpath=(${ASDF_DIR}/completions $fpath)
 
 ## aws cli
 autoload -U bashcompinit && bashcompinit
@@ -85,14 +83,13 @@ function s3-delete-all-version() {
 
 # ------------------ Environment Variable ---------------------
 # Here defines environment variables except it is generally defined on .zshenv.
-# Example : Environment variable of application installed by asdf.
+# Example : Environment variable of application installed by rtx.
 
 # Go
 export GOPATH=$(go env GOPATH)
 
 # ------------------ Work -----------------
 source ~/.zshrc_work
-
 
 # ------------------- Starship ------------
 eval "$(starship init zsh)"
