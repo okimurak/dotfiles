@@ -1,0 +1,30 @@
+format = """
+$directory\
+$git_branch\
+$git_status\
+$git_metrics\
+$line_break
+$character
+"""
+
+right_format = """
+$aws\
+$time
+"""
+
+[aws]
+format = '[$symbol($profile )(\($region\) )(\[$duration\] )]($style)'
+
+[directory]
+format = "[ ﱮ $path ]($style)"
+
+[git_metrics]
+disabled = false
+format = "([+$added]($added_style))[]($added_style)"
+
+[line_break]
+disabled = true
+
+[time]
+disabled = false
+format = '[ $time ]($style)'

@@ -1,37 +1,25 @@
 #!/usr/bin/env zsh
-set -xe
 
 install() {
   # Change default shell
   command -v zsh | sudo tee -a /etc/shells
   sudo chsh -s "$(which zsh)"
+  starship_configuration_path=$(pwd)/$(dirname $0)/
+  
+  mkdir -p "${HOME}/.config" && ln -snf "${starship_configuration_path}/starship.toml" "${HOME}/.config/starship.toml"
 
-  # Install Prezto
-  if [[ -e "${ZDOTDIR:-$HOME}/.zprezto" ]]; then
-    rm -rf "${ZDOTDIR:-$HOME}/.zprezto"
-  fi
-
-  git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-
-  setopt EXTENDED_GLOB
-  for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-    ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-  done
-
-  # Install Powerlevel10k(https://github.com/romkatv/powerlevel10k)
-  zstyle ':prezto:module:prompt' theme 'powerlevel10k'
 }
 
 uninstall() {
   # remove zsh,prezto dotfiles
-  rm -rf ~/.zprezto ~/.zlogin ~/.zlogout ~/.zpreztorc ~/.zprofile
+  unlink "${HOME}/.config/starship.toml"
 }
 
 usage() {
-  echo -e "$0\\n\\tThis script installs zsh and prezto\\n"
+  echo -e "$0\\n\\tThis script configure zsh and starship\\n"
   echo "Usage:"
-  echo "  install           : install zsh and prezto"
-  echo "  uninstall         : uninstall zsh and prezto"
+  echo "  install           : install zsh and starship"
+  echo "  uninstall         : uninstall zsh and starship"
 }
 
 main() {
