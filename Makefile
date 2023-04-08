@@ -6,13 +6,16 @@ DOTFILES   := $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 
 default: update
 
-install: install-tool install-dotfile install-completer
+install: install-font install-tool install-dotfile install-completer
 
 install-completer:
 	./script/completer.sh install
 
 install-dotfile:
 	@$(foreach val, $(DOTFILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
+
+install-font:
+	./script/font.sh
 
 install-tool:
 	./script/asdf.sh install
@@ -25,10 +28,13 @@ install-tool:
 install-wsl:
 	./script/wsl.sh
 
-clean: clean-tool clean-dotfile
+clean: clean-tool clean-dotfile clean-font
 
 clean-dotfile:
 	@$(foreach val, $(DOTFILES), rm -vrf $(HOME)/$(val);)
+
+clean-font:
+	./script/font.sh uninstall
 
 clean-tool:
 	./script/npm.sh uninstall
