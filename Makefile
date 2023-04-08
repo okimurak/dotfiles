@@ -25,7 +25,7 @@ install-tool:
 install-wsl:
 	./script/wsl.sh
 
-clean: uninstall uninstall-dotfile
+clean: clean-tool clean-dotfile
 
 clean-dotfile:
 	@$(foreach val, $(DOTFILES), rm -vrf $(HOME)/$(val);)

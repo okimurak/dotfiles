@@ -15,7 +15,7 @@ uninstall() {
   brew bundle cleanup --file "$(dirname $0)"/../.Brewfile --force 
 
   # Reference https://github.com/homebrew/install#uninstall-homebrew
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
 }
 
 update() {
