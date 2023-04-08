@@ -1,17 +1,15 @@
 #!/usr/bin/env bash
 
 install() {
-  git clone https://github.com/powerline/fonts.git $FONT_DIR --depth=1
+  # TODO
+  git clone https://github.com/ryanoasis/nerd-fonts.git $FONT_DIR --depth=1
   cd $FONT_DIR
-  ./install.sh
-  
+  ./install.sh 3270
 }
 
 uninstall() {
-  cd $FONT_DIR
-  chmod +x uninstall.sh
-  ./uninstall.sh
-  cd ../ && rm -rf $FONT_DIR
+  # TODO
+  rm -rf $FONT_DIR
 }
 
 usage() {
@@ -20,7 +18,6 @@ usage() {
   echo "  install           : install font"
   echo "  uninstall         : uninstall fonts"
 }
-
 
 
 main() {
