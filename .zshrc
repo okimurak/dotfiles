@@ -1,21 +1,4 @@
 # ----------------- Application ---------------------
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-# Prezto
-# Should stay here.
-# Bacause the following command has to need except here.
-# # Finalize for p10k
-# (( ! ${+functions[p10k]} )) || p10k finalize
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 # asdf
 . "${HOME}"/.asdf/asdf.sh
 
@@ -25,9 +8,6 @@ setopt nonomatch    # No deployment blob
 
 # Execute "ls" after "cd"
 chpwd() {ls}
-
-# Theme
-source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 # ----------------- Alias ---------------------
 
@@ -118,3 +98,7 @@ export GOPATH=$(go env GOPATH)
 
 # ------------------ Work -----------------
 source ~/.zshrc_work
+
+
+# ------------------- Starship ------------
+eval "$(starship init zsh)"
