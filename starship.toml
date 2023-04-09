@@ -3,7 +3,7 @@ $directory\
 $git_branch\
 $git_status\
 $git_metrics\
-$line_break
+$line_break\
 $character
 """
 
@@ -14,6 +14,7 @@ $time
 
 [aws]
 format = '[$symbol($profile )(\($region\) )(\[$duration\] )]($style)'
+symbol = "  "
 
 [directory]
 format = "[ ﱮ $path ]($style)"
