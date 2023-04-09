@@ -85,8 +85,6 @@ function s3-delete-all-version() {
 # Here defines environment variables except it is generally defined on .zshenv.
 # Example : Environment variable of application installed by rtx.
 
-# Go
-export GOPATH=$(go env GOPATH)
 
 # ------------------ Work -----------------
 source ~/.zshrc_work
