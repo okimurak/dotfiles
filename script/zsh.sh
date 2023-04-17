@@ -4,11 +4,11 @@ install() {
   # Change default shell
   command -v zsh | sudo tee -a /etc/shells
   sudo chsh -s "$(which zsh)"
-  starship_configuration_path=$(pwd)/$(dirname $0)/
-  
-  mkdir -p "${HOME}/.config" && ln -snf "${starship_configuration_path}/starship.toml" "${HOME}/.config/starship.toml"
-  git clone https://github.com/zsh-users/zsh-autosuggestions "${HOME}/.zsh/zsh-autosuggestions"
+  configuration_path=$(pwd)/$(dirname $0)
 
+  mkdir -p "${HOME}/.config" && ln -snf "${configuration_path}/starship.toml" "${HOME}/.config/starship.toml"
+  # Install zsh-autosuggestions
+  git clone https://github.com/zsh-users/zsh-autosuggestions "${configuration_path}/.zsh/zsh-autosuggestions"
 }
 
 uninstall() {
