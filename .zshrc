@@ -88,7 +88,9 @@ function s3-delete-all-version() {
 
 
 # ------------------ Work -----------------
-source ~/.zshrc_work
+if [[ -e "${HOME}/.zshrc_work" ]]; then
+  source "${HOME}/.zshrc_work"
+fi
 
 # ------------------- Starship ------------
 eval "$(starship init zsh)"
