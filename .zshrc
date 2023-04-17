@@ -32,11 +32,12 @@ alias k='kubectl'
 # ----------------- Completer ---------------------
 
 fpath=(~/.zsh/completion $fpath)
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 ## aws cli
 autoload -U bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
-complete -C '${HOME}/.asdf/shims/aws_completer' aws
+complete -C '$(which aws_completer)' aws
 
 # ----------------- Function ---------------------
 function docker-search-tags() {

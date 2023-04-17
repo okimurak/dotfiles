@@ -3,17 +3,15 @@ $directory\
 $git_branch\
 $git_status\
 $git_metrics\
+$aws\
+$time\
 $line_break
 $character
 """
 
-right_format = """
-$aws\
-$time
-"""
-
 [aws]
 format = '[$symbol($profile )(\($region\) )(\[$duration\] )]($style)'
+symbol = '🅰 '
 
 [directory]
 format = "[ ﱮ $path ]($style)"
@@ -23,6 +21,9 @@ disabled = false
 format = "([+$added]($added_style))[]($added_style)"
 
 [line_break]
+disabled = true
+
+[package]
 disabled = true
 
 [time]

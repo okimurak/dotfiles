@@ -7,12 +7,14 @@ install() {
   starship_configuration_path=$(pwd)/$(dirname $0)/
   
   mkdir -p "${HOME}/.config" && ln -snf "${starship_configuration_path}/starship.toml" "${HOME}/.config/starship.toml"
+  git clone https://github.com/zsh-users/zsh-autosuggestions "${HOME}/.zsh/zsh-autosuggestions"
 
 }
 
 uninstall() {
   # remove zsh,prezto dotfiles
   unlink "${HOME}/.config/starship.toml"
+  rm -rf "${HOME}/.zsh/zsh-autosuggestions"
 }
 
 usage() {
