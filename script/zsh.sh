@@ -14,7 +14,10 @@ install() {
 uninstall() {
   # remove zsh,prezto dotfiles
   unlink "${HOME}/.config/starship.toml"
-  rm -rf "${HOME}/.zsh/zsh-autosuggestions"
+  # uninstall zsh-autosuggestions
+  unlink "${HOME}/.zsh/zsh-autosuggestions"
+  configuration_path=$(pwd)/$(dirname $0)
+  rm -rf "${configuration_path}/.zsh/zsh-autosuggestions"
 }
 
 usage() {
