@@ -20,7 +20,7 @@ install-font:
 install-tool:
 	./script/brew.sh install
 	./script/zsh.sh install
-	./script/rtx.sh install
+	./script/mise.sh install
 	./script/pip.sh install
 	./script/npm.sh install
 	./script/completer.sh install
@@ -50,5 +50,5 @@ update: update-dotfile update-tool
 update-dotfile: clean-dotfile install-dotfile
 
 update-tool:
-	./script/asdf.sh update
+	./script/mise.sh update
 	./script/brew.sh update

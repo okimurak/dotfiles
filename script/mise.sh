@@ -7,20 +7,20 @@ install() {
 
   # Install packages (global)
   source "${configure_path}/.zshrc"
-  rtx install
-  rtx ls
+  mise install
+  mise ls
 }
 
 update() {
   # Update tools
-  rtx install
-  rtx ls
+  mise install
+  mise ls
 }
 
 usage() {
-  echo -e "$0\\n\\tThis script installs asdf plugins\\n"
+  echo -e "$0\\n\\tThis script installs mise(asdf) plugins\\n"
   echo "Usage:"
-  echo "  install           : install asdf plugins"
+  echo "  install           : install mise(asdf) plugins"
 }
 
 main() {
