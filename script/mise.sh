@@ -1,12 +1,12 @@
 #!/usr/bin/env zsh
 
 install() {
-  configure_path=$(pwd)/$(dirname $0)/
-  echo "Move workspace to ${configure_path}"
-  cd "${configure_path}" || exit
+  configuration_path=$(pwd)/$(dirname $0)/
+  echo "Move workspace to ${configuration_path}"
+  cd "${configuration_path}" || exit
 
   # Install packages (global)
-  source "${configure_path}/.zshrc"
+  source "${configuration_path}/.zshrc"
   mkdir -p "${HOME}/.config/mise" && ln -snf "${configuration_path}/config.toml" "${HOME}/.config//mise/config.toml"
   mise install
   mise ls
@@ -19,7 +19,7 @@ update() {
 }
 
 uninstall() {
-  mise uninstall
+  #mise uninstall
   unlink "${HOME}/.config/mise/config.toml"
   rm -rf "${HOME}/.config/mise/"
 }
