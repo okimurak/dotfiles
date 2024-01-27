@@ -87,7 +87,8 @@ make update
 ### Package Manager
 
 - [mise](https://github.com/jdx/mise)
-  - About install package, please see [.tool-versions by mise](.tool-versions).
+  - About install package, please see [config.toml by mise](config.toml).
+  - If you want to use specific tool version, please create and use `.mise.toml` (please see [Configuration](https://mise.jdx.dev/configuration.html)).
 - [Homebrew](https://docs.brew.sh/)
   - About install package, please see [.Brewfile by HomeBrew](.Brewfile)
 

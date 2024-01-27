@@ -39,6 +39,7 @@ clean-font:
 clean-tool:
 	./script/npm.sh uninstall
 	./script/pip.sh uninstall
+	./script/mise.sh uninstall
 	./script/zsh.sh uninstall
 	./script/brew.sh uninstall
 
