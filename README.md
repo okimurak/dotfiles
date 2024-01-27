@@ -1,6 +1,6 @@
 # dotfiles
 
-Setup dotfiles and each tool settings on [asdf](https://asdf-vm.com/) and [Homebrew](https://docs.brew.sh/).
+Setup dotfiles and each tool settings on [mise](https://github.com/jdx/mise) and [Homebrew](https://docs.brew.sh/).
 
 ## Requirement
 
@@ -86,8 +86,8 @@ make update
 
 ### Package Manager
 
-- [rtx](https://github.com/jdxcode/rtx)
-  - About install package, please see [.tool-version by asdf](.tool-version).
+- [mise](https://github.com/jdx/mise)
+  - About install package, please see [.tool-version by mise](.tool-version).
 - [Homebrew](https://docs.brew.sh/)
   - About install package, please see [.Brewfile by HomeBrew](.Brewfile)
 
