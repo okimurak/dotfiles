@@ -87,7 +87,7 @@ make update
 ### Package Manager
 
 - [mise](https://github.com/jdx/mise)
-  - About install package, please see [.tool-version by mise](.tool-version).
+  - About install package, please see [.tool-versions by mise](.tool-versions).
 - [Homebrew](https://docs.brew.sh/)
   - About install package, please see [.Brewfile by HomeBrew](.Brewfile)
 
