@@ -6,8 +6,8 @@ setopt nonomatch    # No deployment blob
 # Execute "ls" after "cd"
 chpwd() {ls}
 
-# rtx
-eval "$($(brew --prefix)/bin/rtx activate zsh)"
+# mise
+eval "$($(brew --prefix)/bin/mise activate zsh)"
 
 # ----------------- Alias ---------------------
 
