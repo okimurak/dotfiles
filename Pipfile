@@ -8,4 +8,4 @@ autopep8 = "==2.0.2"
 boto3 = "==1.26.104"
 
 [requires]
-python_version = "3.9"
+python_version = "3.11"

@@ -3,15 +3,14 @@
 install() {
   source "${base_dir}"/../.profile
   python -m pip install pipenv
-  asdf reshim python
-  pipenv --python 3.9
-  cd "${base_dir}"/.. && pipenv install
+  cd "${base_dir}"/.. && \
+    pipenv --python 3.11 && \
+    pipenv install
 }
 
 uninstall() {
   cd "${base_dir}"/.. && pipenv uninstall --all
   python -m pip install uninstall pipenv
-  asdf reshim python
 }
 
 usage() {
