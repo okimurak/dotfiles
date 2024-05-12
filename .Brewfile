@@ -1,5 +1,4 @@
 tap "homebrew/bundle"
-tap "homebrew/core"
 brew "cfn-lint"
 brew "coreutils" # to use "tac" command for the peco-history-selection function.
 brew "gettext" # envsubst
