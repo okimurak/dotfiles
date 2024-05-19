@@ -20,3 +20,6 @@ shfmt       = "3.6.0"
 stern       = "1.24.0"
 terraform   = "1.8.3"
 yq          = "4.33.2"
+
+[settings]
+experimental = true
