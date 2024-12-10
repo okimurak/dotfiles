@@ -103,6 +103,7 @@ make update
 - [Node.js](https://nodejs.org/ja/)
   - textlint plugins
   - [markdownlint](https://github.com/DavidAnson/markdownlint)
+  - [Biome](https://biomejs.dev/ja/)
 - [peco](https://github.com/peco/peco)
   - You can search command history by `Ctrl + R`.
 - Python (asdf-plugin used by [pyenv](https://github.com/pyenv/pyenv))
