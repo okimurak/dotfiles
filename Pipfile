@@ -4,7 +4,6 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-autopep8 = "==2.0.2"
 boto3 = "==1.26.104"
 
 [requires]

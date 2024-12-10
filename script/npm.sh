@@ -17,6 +17,9 @@ install() {
 
   # configure Markdown Lint(for VS Code : https://github.com/DavidAnson/vscode-markdownlint)
   ln -snf "${lint_configure_path}"../.markdownlint.jsonc .markdownlint.jsonc
+
+  # configure Biome
+  ln -snf "${lint_configure_path}"../biome.json biome.json
 }
 
 uninstall() {
