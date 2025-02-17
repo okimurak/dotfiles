@@ -20,6 +20,8 @@ alias ga='git add'
 alias gc='git commit'
 alias gph='git push -u origin HEAD'
 alias gpfh='git push -u -f origin HEAD'
+alias gdf='git diff'
+alias gdfs='git diff --staged --stat'
 
 # Docker Operation
 alias dc='docker container'
