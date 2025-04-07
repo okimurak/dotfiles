@@ -14,9 +14,6 @@ install-completer:
 install-dotfile:
 	@$(foreach val, $(DOTFILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
 
-install-font:
-	./script/font.sh
-
 install-tool:
 	./script/brew.sh install
 	./script/zsh.sh install
@@ -32,9 +29,6 @@ clean: clean-tool clean-dotfile clean-font
 
 clean-dotfile:
 	@$(foreach val, $(DOTFILES), rm -vrf $(HOME)/$(val);)
-
-clean-font:
-	./script/font.sh uninstall
 
 clean-tool:
 	./script/npm.sh uninstall
