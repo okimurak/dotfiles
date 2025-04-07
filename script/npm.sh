@@ -14,16 +14,12 @@ TOOL_CONFIG_FILES=(
 
 install() {
   # move workspace
-  lint_configure_path=$(pwd)/$(dirname $0)/
-  workspace=${lint_configure_path}../../
-  echo "Move workspace to ${workspace}"
-  cd "${workspace}" || exit
+  move_workspace
 
   # install textlint component
   for config_file in "${NPM_CONFIG_FILES[@]}"; do
     ln -snf "${lint_configure_path}"../"${config_file}" "${config_file}"
   done
-  npm install
 
   # Create symbolic links for configuration files
   for config_file in "${TOOL_CONFIG_FILES[@]}"; do
@@ -31,20 +27,18 @@ install() {
   done
 }
 
-update() {
-  # update node package
-  npm update
-}
-
-uninstall() {
+move_workspace() {
   # move workspace
   lint_configure_path=$(pwd)/$(dirname $0)/
   workspace=${lint_configure_path}../../
   echo "Move workspace to ${workspace}"
   cd "${workspace}" || exit
+}
 
-  # uninstall node package
-  rm -rf node_modules
+uninstall() {
+  # move workspace
+  move_workspace
+
   # Remove symbolic links for configuration files
   for config_file in "${NPM_CONFIG_FILES[@]}" "${TOOL_CONFIG_FILES[@]}"; do
     unlink "${config_file}"
