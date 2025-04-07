@@ -31,6 +31,11 @@ install() {
   done
 }
 
+update() {
+  # update node package
+  npm update
+}
+
 uninstall() {
   # move workspace
   lint_configure_path=$(pwd)/$(dirname $0)/
@@ -58,6 +63,8 @@ main() {
 
   if [[ $cmd == "install" ]]; then
     install
+  elif [[ $cmd == "update" ]]; then
+    update
   elif [[ $cmd == "uninstall" ]]; then
     uninstall
   else
