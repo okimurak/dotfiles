@@ -1,5 +1,3 @@
-# General
-*~
 # HomeBrew
 .Brewfile.lock.json
 # Git
@@ -12,12 +10,7 @@ node_modules
 Gemfile.loc
 # Python
 Pipfile.lock
-# mise
-.mise.toml
-# Mac OS
-.DS_Store
 # Windows
-Thumbs.db
 .windows_commands/**
 # zsh
 .zshrc_work

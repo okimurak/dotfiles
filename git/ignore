@@ -1,0 +1,8 @@
+# General
+*~
+# mise
+.mise.toml
+# Mac OS
+.DS_Store
+# Windows
+Thumbs.db
