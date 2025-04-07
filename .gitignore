@@ -12,6 +12,8 @@ node_modules
 Gemfile.loc
 # Python
 Pipfile.lock
+# mise
+mise.toml
 # Mac OS
 .DS_Store
 # Windows
