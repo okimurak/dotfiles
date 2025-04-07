@@ -7,7 +7,8 @@ install() {
 
   # Install packages (global)
   source "${configuration_path}/.zshrc"
-  mkdir -p "${HOME}/.config/mise" && ln -snf "${configuration_path}/config.toml" "${HOME}/.config//mise/config.toml"
+  mkdir -p "${HOME}/.config/mise" && ln -snf "${configuration_path}/config.toml" "${HOME}/.config/mise/config.toml"
+  mkdir -p "${HOME}/.config/git/ignore" && ln -snf "${configuration_path}/git/ignore" "${HOME}/.config/git/ignore"
   mise install
   mise ls
 }
@@ -19,16 +20,17 @@ update() {
 }
 
 uninstall() {
-  #mise uninstall
+  mise uninstall -a
   unlink "${HOME}/.config/mise/config.toml"
   rm -rf "${HOME}/.config/mise/"
 }
 
 usage() {
-  echo -e "$0\\n\\tThis script installs mise(asdf) plugins\\n"
+  echo -e "$0\\n\\tThis script installs mise plugins\\n"
   echo "Usage:"
-  echo "  install           : install mise(asdf) plugins"
-  echo "  uninstall         : uninstall mise(asdf) plugins"
+  echo "  install           : install mise plugins"
+  echo "  update            : update mise plugins"
+  echo "  uninstall         : uninstall mise plugins"
 }
 
 main() {
