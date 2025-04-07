@@ -8,7 +8,6 @@ install() {
   # Install packages (global)
   source "${configuration_path}/.zshrc"
   mkdir -p "${HOME}/.config/mise" && ln -snf "${configuration_path}/config.toml" "${HOME}/.config/mise/config.toml"
-  mkdir -p "${HOME}/.config/git/ignore" && ln -snf "${configuration_path}/git/ignore" "${HOME}/.config/git/ignore"
   mise install
   mise ls
 }
