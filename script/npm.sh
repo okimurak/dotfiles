@@ -1,11 +1,6 @@
 #!/usr/bin/env bash
 
 # Define an tool of configuration files
-NPM_CONFIG_FILES=(
-  "package.json"
-  "package-lock.json"
-)
-
 TOOL_CONFIG_FILES=(
   ".textlintrc"
   ".markdownlint.jsonc" # https://github.com/DavidAnson/vscode-markdownlint
@@ -15,11 +10,6 @@ TOOL_CONFIG_FILES=(
 install() {
   # move workspace
   move_workspace
-
-  # install textlint component
-  for config_file in "${NPM_CONFIG_FILES[@]}"; do
-    ln -snf "${lint_configure_path}"../"${config_file}" "${config_file}"
-  done
 
   # Create symbolic links for configuration files
   for config_file in "${TOOL_CONFIG_FILES[@]}"; do
@@ -40,7 +30,7 @@ uninstall() {
   move_workspace
 
   # Remove symbolic links for configuration files
-  for config_file in "${NPM_CONFIG_FILES[@]}" "${TOOL_CONFIG_FILES[@]}"; do
+  for config_file in "${TOOL_CONFIG_FILES[@]}"; do
     unlink "${config_file}"
   done
 }
@@ -57,8 +47,6 @@ main() {
 
   if [[ $cmd == "install" ]]; then
     install
-  elif [[ $cmd == "update" ]]; then
-    update
   elif [[ $cmd == "uninstall" ]]; then
     uninstall
   else
