@@ -1,5 +1,17 @@
 #!/usr/bin/env bash
 
+# Define an tool of configuration files
+NPM_CONFIG_FILES=(
+  "package.json"
+  "package-lock.json"
+)
+
+TOOL_CONFIG_FILES=(
+  ".textlintrc"
+  ".markdownlint.jsonc" # https://github.com/DavidAnson/vscode-markdownlint
+  "biome.json"
+)
+
 install() {
   # move workspace
   lint_configure_path=$(pwd)/$(dirname $0)/
@@ -8,18 +20,15 @@ install() {
   cd "${workspace}" || exit
 
   # install textlint component
-  ln -snf "${lint_configure_path}"../package.json package.json
-  ln -snf "${lint_configure_path}"../package-lock.json package-lock.json
+  for config_file in "${NPM_CONFIG_FILES[@]}"; do
+    ln -snf "${lint_configure_path}"../"${config_file}" "${config_file}"
+  done
   npm install
 
-  # initialize textlint
-  ln -snf "${lint_configure_path}"../.textlintrc .textlintrc
-
-  # configure Markdown Lint(for VS Code : https://github.com/DavidAnson/vscode-markdownlint)
-  ln -snf "${lint_configure_path}"../.markdownlint.jsonc .markdownlint.jsonc
-
-  # configure Biome
-  ln -snf "${lint_configure_path}"../biome.json biome.json
+  # Create symbolic links for configuration files
+  for config_file in "${TOOL_CONFIG_FILES[@]}"; do
+    ln -snf "${lint_configure_path}"../"${config_file}" "${config_file}"
+  done
 }
 
 uninstall() {
@@ -30,11 +39,11 @@ uninstall() {
   cd "${workspace}" || exit
 
   # uninstall node package
-  rm -rf node_module
-  unlink package.json
-  unlink package-lock.json
-  unlink .textlintrc
-  unlink .markdownlint.jsonc
+  rm -rf node_modules
+  # Remove symbolic links for configuration files
+  for config_file in "${NPM_CONFIG_FILES[@]}" "${TOOL_CONFIG_FILES[@]}"; do
+    unlink "${config_file}"
+  done
 }
 
 usage() {
