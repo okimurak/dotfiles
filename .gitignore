@@ -13,7 +13,7 @@ Gemfile.loc
 # Python
 Pipfile.lock
 # mise
-mise.toml
+.mise.toml
 # Mac OS
 .DS_Store
 # Windows
