@@ -18,7 +18,6 @@ install-tool:
 	./script/brew.sh install
 	./script/zsh.sh install
 	./script/mise.sh install
-	./script/pip.sh install
 	./script/npm.sh install
 	./script/completer.sh install
 
@@ -32,7 +31,6 @@ clean-dotfile:
 
 clean-tool:
 	./script/npm.sh uninstall
-	./script/pip.sh uninstall
 	./script/mise.sh uninstall
 	./script/zsh.sh uninstall
 	./script/brew.sh uninstall
@@ -45,5 +43,6 @@ update: update-dotfile update-tool
 update-dotfile: clean-dotfile install-dotfile
 
 update-tool:
-	./script/mise.sh update
 	./script/brew.sh update
+	./script/npm.sh update
+	./script/mise.sh update

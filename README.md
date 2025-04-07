@@ -94,20 +94,20 @@ make update
 
 ### Shell
 
-- zsh
-  - [Starship](https://starship.rs/)
+- zsh with [Starship](https://starship.rs/)
 
 ### Tools
 
 - Git
-- [Node.js](https://nodejs.org/ja/)
-  - textlint plugins
+- Linter
+  - [textlint](https://github.com/textlint/textlint) plugins
   - [markdownlint](https://github.com/DavidAnson/markdownlint)
   - [Biome](https://biomejs.dev/ja/)
 - [peco](https://github.com/peco/peco)
   - You can search command history by `Ctrl + R`.
-- Python (asdf-plugin used by [pyenv](https://github.com/pyenv/pyenv))
-  - [Pipenv: 人間のためのPython開発ワークフロー — pipenv 2018.11.27.dev0 ドキュメント](https://pipenv-ja.readthedocs.io/ja/translate-ja/)
+- Python
+  - [uv](https://github.com/astral-sh/uv)
+    - If you develop python project, you can use uv to manage python package.
 
 ## Work settings
 
