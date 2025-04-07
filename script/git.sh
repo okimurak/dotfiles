@@ -10,7 +10,6 @@ install() {
 }
 
 uninstall() {
-  #mise uninstall
   unlink "${HOME}/.config/git/ignore"
 }
 
