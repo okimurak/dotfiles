@@ -6,7 +6,7 @@ DOTFILES   := $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 
 default: update
 
-install: install-font install-dotfile install-tool install-completer
+install: install-dotfile install-tool install-completer
 
 install-completer:
 	./script/completer.sh install
@@ -25,7 +25,7 @@ install-tool:
 install-wsl:
 	./script/wsl.sh
 
-clean: clean-tool clean-dotfile clean-font
+clean: clean-tool clean-dotfile
 
 clean-dotfile:
 	@$(foreach val, $(DOTFILES), rm -vrf $(HOME)/$(val);)
