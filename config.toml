@@ -1,5 +1,5 @@
 [tools]
-awscli      = "2.21.1"
+awscli      = "2.23.9"
 aws-copilot = "1.27.0"
 awsebcli    = "3.20.10"
 aws-sam-cli = "1.125.0"
@@ -15,7 +15,7 @@ jq          = "1.7.1"
 kubectl     = "1.24.0"
 kubectx     = "0.9.4"
 lazydocker  = "0.24.1"
-nodejs      = "18.15.0"
+node        = "22.14.0"
 peco        = "0.5.11"
 pipx        = "1.7.1" # to use python cli tools
 "pipx:cfn-lint" = "1.32.4"
