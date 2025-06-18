@@ -28,6 +28,9 @@ install() {
   ## kubectl
   kubectl completion zsh >"${completion_path}/_kubectl"
 
+  ## mise
+  mise completion zsh  > "${completion_path}/_mise"
+
   ## yq
   yq shell-completion zsh >"${completion_path}/_yq"
 
