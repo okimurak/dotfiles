@@ -7,7 +7,7 @@ setopt nonomatch    # No deployment blob
 chpwd() {ls}
 
 # mise
-eval "$($(brew --prefix)/bin/mise activate zsh)"
+eval eval "$(mise activate zsh)"
 
 # ----------------- Alias ---------------------
 
