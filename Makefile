@@ -15,7 +15,7 @@ install-dotfile:
 	@$(foreach val, $(DOTFILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
 
 install-tool:
-	./script/brew.sh install
+#	./script/brew.sh install
 	./script/zsh.sh install
 	./script/mise.sh install
 	./script/git.sh install
@@ -35,7 +35,7 @@ clean-tool:
 	./script/git.sh uninstall
 	./script/mise.sh uninstall
 	./script/zsh.sh uninstall
-	./script/brew.sh uninstall
+#	./script/brew.sh uninstall
 
 clean-wsl:
 	./script/wsl.sh
