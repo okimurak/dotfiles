@@ -38,7 +38,7 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 ## aws cli
 autoload -U bashcompinit && bashcompinit
-autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit -C
 complete -C '$(which aws_completer)' aws
 
 # ----------------- Function ---------------------
