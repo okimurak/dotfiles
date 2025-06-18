@@ -1,6 +1,13 @@
 #!/usr/bin/env zsh
 
+INSTALL_MISE_VERSION=v2024.5.17
+
 install() {
+  install_mise
+  install_package
+}
+
+install_package() {
   configuration_path=$(pwd)/$(dirname $0)/
   echo "Move workspace to ${configuration_path}"
   cd "${configuration_path}" || exit
@@ -12,6 +19,23 @@ install() {
   mise ls
 }
 
+install_mise() {
+  if is_mise_installed; then
+    echo "mise is already installed."
+    return 0
+  fi
+
+  curl https://mise.run | MISE_VERSION="${INSTALL_MISE_VERSION}" sh
+}
+
+is_mise_installed() {
+  if command -v mise >/dev/null 2>&1; then
+      return 0
+  else
+      return 1
+  fi
+}
+
 update() {
   # Update tools
   mise install
@@ -19,9 +43,23 @@ update() {
 }
 
 uninstall() {
+  uninstall_package
+  uninstall_mise
+}
+
+uninstall_package() {
   mise uninstall -a
   unlink "${HOME}/.config/mise/config.toml"
   rm -rf "${HOME}/.config/mise/"
+}
+
+uninstall_mise() {
+  mise implode
+  if ! is_mise_installed; then
+      print_success "mise uninstallation completed successfully."
+  else
+      return 1
+  fi
 }
 
 usage() {
