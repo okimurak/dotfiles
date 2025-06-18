@@ -1,20 +1,28 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
   "files": {
-    "ignoreUnknown": false,
-    "ignore": [
-      "**/dist/**",
-      "**/.next/**",
-      "**/.turbo/**",
-      "**/.vscode/**",
-      "**/node_modules/**"
+    "includes": [
+      "!**/dist/**",
+      "!**/.next/**",
+      "!**/.turbo/**",
+      "!**/.vscode/**",
+      "!**/node_modules/**"
     ]
   },
   "formatter": {
-    "ignore": ["**/dist", "**/cdk.out"],
+    "includes": ["!**/dist", "!**/cdk.out"],
     "indentStyle": "space",
     "indentWidth": 2,
     "lineEnding": "lf",
     "bracketSpacing": true
+  },
+  "json": {
+    "parser": {
+      "allowComments": true
+    },
+    "formatter": {
+      "enabled": true,
+      "indentStyle": "space"
+    }
   }
 }
