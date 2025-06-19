@@ -20,7 +20,7 @@ install-tool:
 	./script/mise.sh install
 	./script/git.sh install
 	./script/npm.sh install
-	./script/completer.sh install
+
 
 install-wsl:
 	./script/wsl.sh
