@@ -39,7 +39,7 @@ install() {
   if [[ ! -d "~/.zsh/zsh-autosuggestions" ]]; then
     rm -rf "~/.zsh/zsh-autosuggestions"
   fi
-  git clone https://github.com/zsh-users/zsh-autosuggestions
+  git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 
   source "${workspace}/.zshrc"
 }

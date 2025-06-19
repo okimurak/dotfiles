@@ -1,6 +1,5 @@
 # ----------------- Application ---------------------
 # General
-source ~/.profile
 setopt nonomatch    # No deployment blob
 
 # Execute "ls" after "cd"
