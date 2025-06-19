@@ -1,10 +1,11 @@
 # dotfiles
 
-Setup dotfiles and each tool settings on [mise](https://github.com/jdx/mise) and [Homebrew](https://docs.brew.sh/).
+Setup dotfiles and each tool settings on [mise](https://github.com/jdx/mise).
 
 ## Requirement
 
 - Linux
+- Git
 
 ## Install
 
@@ -89,8 +90,6 @@ make update
 - [mise](https://github.com/jdx/mise)
   - About install package, please see [config.toml by mise](config.toml).
   - If you want to use specific tool version, please create and use `.mise.toml` (please see [Configuration](https://mise.jdx.dev/configuration.html)).
-- [Homebrew](https://docs.brew.sh/)
-  - About install package, please see [.Brewfile by HomeBrew](.Brewfile)
 
 ### Shell
 
@@ -103,11 +102,9 @@ make update
   - [textlint](https://github.com/textlint/textlint) plugins
   - [markdownlint](https://github.com/DavidAnson/markdownlint)
   - [Biome](https://biomejs.dev/ja/)
-- [peco](https://github.com/peco/peco)
-  - You can search command history by `Ctrl + R`.
+- [peco](https://github.com/peco/peco) : You can search command history by `Ctrl + R`.
 - Python
-  - [uv](https://github.com/astral-sh/uv)
-    - If you develop python project, you can use uv to manage python package.
+  - [uv](https://github.com/astral-sh/uv) : You can use uv to manage Python package if you develop Python project. Also you can execute tools created Python package like as [`AWS MCP Servers`](https://awslabs.github.io/mcp/), `cfn-lint` etc... without install.
 
 ## Work settings
 
