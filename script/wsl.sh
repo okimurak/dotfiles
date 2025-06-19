@@ -17,13 +17,13 @@ EOF
   local SystemMountPath="/mnt/c"
 
   # certutil
-  ln -s "${SystemMountPath}/Windows/System32/certutil.exe"
+  ln -s "${SystemMountPath}/Windows/System32/certutil.exe" .
   # clip
-  ln -s "${SystemMountPath}/Windows/System32/clip.exe"
+  ln -s "${SystemMountPath}/Windows/System32/clip.exe" .
   # Docker Desktop for Windows
-  ln -s "${SystemMountPath}/Program Files/Docker/Docker/resources/bin/docker-credential-desktop.exe"
+  ln -s "${SystemMountPath}/Program Files/Docker/Docker/resources/bin/docker-credential-desktop.exe" .
   # PowerShell
-  ln -s "${SystemMountPath}/Windows/System32/WindowsPowerShell/v1.0/powershell.exe"
+  ln -s "${SystemMountPath}/Windows/System32/WindowsPowerShell/v1.0/powershell.exe" .
 }
 
 uninstall() {
