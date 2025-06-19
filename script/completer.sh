@@ -2,6 +2,7 @@
 
 install() {
   # Replace install
+  source "${HOME}/.zshrc"
   workspace="$(dirname $0)"
   completion_path=${workspace}/.zsh/completion
   if [[ ! -d "${completion_path}" ]]; then
