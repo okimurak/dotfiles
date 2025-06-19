@@ -1,5 +1,5 @@
 [tools]
-aws-cli      = "2.27.38"
+aws-cli     = "2.27.38"
 aws-copilot = "1.27.0"
 aws-sam     = "1.140.0"
 ctop        = "0.7.7"
