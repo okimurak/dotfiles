@@ -52,7 +52,6 @@ usage() {
 
 main() {
   local cmd=$1
-  source "$(dirname $0)"/../.profile
 
   if [[ $cmd == "install" ]]; then
     install

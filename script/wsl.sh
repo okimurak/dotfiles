@@ -38,7 +38,6 @@ usage() {
 
 main() {
   local cmd=$1
-  source "$(dirname $0)"/../.profile
   configure_path=$(pwd)/$(dirname $0)/../.windows_commands
 
   if [[ $cmd == "install" ]]; then
