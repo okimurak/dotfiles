@@ -2,8 +2,8 @@
 
 install() {
   # Replace install
-  source "${HOME}/.zshrc"
   workspace="$(dirname $0)"
+  source "${workspace}/.zshrc"
   completion_path=${workspace}/.zsh/completion
   if [[ ! -d "${completion_path}" ]]; then
     mkdir -p "${completion_path}"
@@ -36,10 +36,10 @@ install() {
   yq shell-completion zsh >"${completion_path}/_yq"
 
   ## zsh
-  if [[ ! -d "~/.zsh/zsh-autosuggestions" ]]; then
-    rm -rf "~/.zsh/zsh-autosuggestions"
+  if [[ -d "${workspace}/.zsh/zsh-autosuggestions" ]]; then
+    rm -rf "${workspace}/.zsh/zsh-autosuggestions"
   fi
-  git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+  git clone https://github.com/zsh-users/zsh-autosuggestions ${workspace}/.zsh/zsh-autosuggestions
 
   source "${workspace}/.zshrc"
 }
