@@ -6,7 +6,7 @@ DOTFILES   := $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 
 default: update
 
-install: install-dotfile install-tool install-completer
+install: install-dotfile install-tool install-completer install-dotfile
 
 install-completer:
 	./script/completer.sh install
@@ -19,7 +19,6 @@ install-tool:
 	./script/mise.sh install
 	./script/git.sh install
 	./script/npm.sh install
-
 
 install-wsl:
 	./script/wsl.sh
