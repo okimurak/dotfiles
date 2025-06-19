@@ -13,10 +13,10 @@ install_package() {
   cd "${configuration_path}" || exit
 
   # Install packages (global)
-  source "${configuration_path}/.zshrc"
   mkdir -p "${HOME}/.config/mise" && ln -snf "${configuration_path}/config.toml" "${HOME}/.config/mise/config.toml"
   mise install
   mise ls
+  source "${configuration_path}/.zshrc"
 }
 
 install_mise() {
@@ -30,9 +30,9 @@ install_mise() {
 
 is_mise_installed() {
   if command -v mise >/dev/null 2>&1; then
-      return 0
+    return 0
   else
-      return 1
+    return 1
   fi
 }
 
@@ -56,9 +56,9 @@ uninstall_package() {
 uninstall_mise() {
   mise implode
   if ! is_mise_installed; then
-      print_success "mise uninstallation completed successfully."
+    print_success "mise uninstallation completed successfully."
   else
-      return 1
+    return 1
   fi
 }
 

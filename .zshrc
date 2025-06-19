@@ -1,3 +1,6 @@
+# Amazon Q pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
+
 # ----------------- Application ---------------------
 # General
 source ~/.profile
@@ -7,7 +10,7 @@ setopt nonomatch    # No deployment blob
 chpwd() {ls}
 
 # mise
-eval eval "$(mise activate zsh)"
+echo 'eval "$(~/.local/bin/mise activate zsh)"'
 
 # ----------------- Alias ---------------------
 
@@ -160,3 +163,6 @@ fi
 
 # ------------------- Starship ------------
 eval "$(starship init zsh)"
+
+# Amazon Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
