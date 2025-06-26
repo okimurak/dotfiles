@@ -15,6 +15,7 @@ kubectl     = "1.32.6"
 kubectx     = "0.9.4"
 lazydocker  = "0.24.1"
 node        = "22.14.0"
+"npm:@google/gemini-cli" = { version = "latest", condition = "{{ os() == 'windows' }}" }
 peco        = "0.5.11"
 "pipx:cfn-lint" = "1.36.0"
 python      = ["3.12.10", "3.11.7"]
