@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-INSTALL_MISE_VERSION=v2025.6.5
+INSTALL_MISE_VERSION=v2025.11.9
 
 install() {
   install_mise
@@ -38,6 +38,7 @@ is_mise_installed() {
 
 update() {
   # Update tools
+  mise self-update
   mise install
   mise ls
 }
