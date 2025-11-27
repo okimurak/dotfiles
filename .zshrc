@@ -2,16 +2,16 @@
 # General
 setopt nonomatch    # No deployment blob
 
-# Execute "ls" after "cd"
-chpwd() {ls}
-
 # mise
 eval "$(~/.local/bin/mise activate zsh)"
 
 # ----------------- Alias ---------------------
 
 # alies Config
-alias ls='ls -FG'
+alias ls='eza --icons auto --time-style relative -F always --hyperlink -h --git --git-repos --sort=name'
+# Execute "ls" after "cd"
+chpwd() {ls}
+
 
 # Git Operation
 alias gs='git status'
