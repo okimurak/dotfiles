@@ -35,11 +35,13 @@ make install
 
 ### Install Font
 
+Run the following command.
+
 ```bash
 make install-font
 ```
 
-Enjoy for dotfiles management.
+Using [Moralerspace](https://github.com/yuru7/moralerspace)
 
 ### Install Tool
 
@@ -51,7 +53,7 @@ make install-tool
 
 ```bash
 make install-wsl
-```
+``
 
 ## Uninstall
 
@@ -128,3 +130,5 @@ EOF
 ### zsh
 
 You can create or edit `.zshrc_work` to use work settings.
+
+Enjoy for dotfiles management !
