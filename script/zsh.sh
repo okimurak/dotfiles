@@ -2,7 +2,7 @@
 
 set -e
 
-# 色付きメッセージ用の関数
+# Functions for colored messages
 print_info() {
     echo -e "\033[34m[INFO]\033[0m $1"
 }
@@ -19,7 +19,7 @@ print_warning() {
     echo -e "\033[33m[WARNING]\033[0m $1"
 }
 
-# OSの検出
+# Detect OS
 detect_os() {
     if [[ "$OSTYPE" == "darwin"* ]]; then
         echo "macos"
@@ -41,7 +41,7 @@ detect_os() {
     fi
 }
 
-# zshがインストールされているかチェック
+# Check if zsh is installed
 is_zsh_installed() {
     if command -v zsh >/dev/null 2>&1; then
         return 0
@@ -50,7 +50,7 @@ is_zsh_installed() {
     fi
 }
 
-# zshがデフォルトシェルかチェック
+# Check if zsh is the default shell
 is_zsh_default_shell() {
     if [[ "$SHELL" == *"zsh"* ]]; then
         return 0
@@ -59,7 +59,7 @@ is_zsh_default_shell() {
     fi
 }
 
-# パッケージマネージャーでzshをインストール
+# Install zsh using package manager
 install_zsh_package() {
     local os=$1
     
@@ -100,7 +100,7 @@ install_zsh_configuration_files() {
 }
 
 
-# パッケージマネージャーでzshをアンインストール
+# Uninstall zsh using package manager
 uninstall_zsh_package() {
     local os=$1
     
@@ -130,15 +130,15 @@ uninstall_zsh_package() {
 }
 
 uninstall_zsh_configuration_files() {
-  # remove starship file
+  # Remove starship file
   unlink "${HOME}/.config/starship.toml"
-  # uninstall zsh-autosuggestions
+  # Uninstall zsh-autosuggestions
   unlink "${HOME}/.zsh/zsh-autosuggestions"
   configuration_path=$(pwd)/$(dirname $0)
   rm -rf "${configuration_path}/.zsh/zsh-autosuggestions"
 }
 
-# デフォルトシェルをzshに変更
+# Change default shell to zsh
 change_default_shell_to_zsh() {
     local zsh_path
     zsh_path=$(which zsh)
@@ -148,19 +148,19 @@ change_default_shell_to_zsh() {
         exit 1
     fi
     
-    # /etc/shellsにzshのパスが登録されているかチェック
+    # Check if zsh path is registered in /etc/shells
     if ! grep -q "$zsh_path" /etc/shells; then
         print_info "Adding zsh to /etc/shells..."
         echo "$zsh_path" | sudo tee -a /etc/shells
     fi
     
-    # デフォルトシェルを変更
+    # Change default shell
     print_info "Changing default shell to zsh..."
     chsh -s "$zsh_path"
     print_success "Default shell changed to zsh. Please restart your terminal or run 'exec zsh' to use zsh."
 }
 
-# デフォルトシェルをbashに戻す
+# Change default shell back to bash
 change_default_shell_to_bash() {
     local bash_path
     bash_path=$(which bash)
@@ -175,18 +175,18 @@ change_default_shell_to_bash() {
     print_success "Default shell changed back to bash."
 }
 
-# zshをインストール
+# Install zsh
 install_zsh() {
     local os
     os=$(detect_os)
     
     print_info "Detected OS: $os"
     
-    # 既にインストールされているかチェック
+    # Check if already installed
     if is_zsh_installed; then
         print_warning "zsh is already installed."
         
-        # デフォルトシェルがzshでない場合は変更を提案
+        # Suggest changing default shell if not zsh
         if ! is_zsh_default_shell; then
             print_info "zsh is not the default shell. Changing default shell to zsh..."
             change_default_shell_to_zsh
@@ -196,16 +196,16 @@ install_zsh() {
         return 0
     fi
     
-    # zshをインストール
+    # Install zsh
     install_zsh_package "$os"
     
-    # インストールが成功したかチェック
+    # Check if installation succeeded
     if is_zsh_installed; then
         print_success "zsh installation completed successfully."
         
-        # デフォルトシェルをzshに変更
+        # Change default shell to zsh
         change_default_shell_to_zsh
-        # zsh 用の設定ファイルを追加
+        # Add zsh configuration files
         install_zsh_configuration_files
     else
         print_error "zsh installation failed."
@@ -213,29 +213,29 @@ install_zsh() {
     fi
 }
 
-# zshをアンインストール
+# Uninstall zsh
 uninstall_zsh() {
     local os
     os=$(detect_os)
     
     print_info "Detected OS: $os"
     
-    # インストールされているかチェック
+    # Check if installed
     if ! is_zsh_installed; then
         print_warning "zsh is not installed."
         return 0
     fi
     
-    # デフォルトシェルがzshの場合は警告
+    # Warn if zsh is the default shell
     if is_zsh_default_shell; then
         print_warning "zsh is currently the default shell. Changing back to bash..."
         change_default_shell_to_bash
     fi
     
-    # zshをアンインストール
+    # Uninstall zsh
     uninstall_zsh_package "$os"
     
-    # アンインストールが成功したかチェック
+    # Check if uninstallation succeeded
     if ! is_zsh_installed; then
         print_success "zsh uninstallation completed successfully."
     else
@@ -244,7 +244,7 @@ uninstall_zsh() {
     fi
 }
 
-# 使用方法を表示
+# Show usage
 show_usage() {
     echo "Usage: $0 {install|uninstall}"
     echo ""
@@ -258,7 +258,7 @@ show_usage() {
     echo "  - Amazon Linux 2 (using yum)"
 }
 
-# メイン処理
+# Main
 main() {
     if [[ $# -eq 0 ]]; then
         show_usage
@@ -283,7 +283,7 @@ main() {
     esac
 }
 
-# スクリプトが直接実行された場合のみmain関数を呼び出す
+# Call main function only when script is executed directly
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
     main "$@"
 fi
