@@ -20,6 +20,9 @@ install-tool:
 	./script/git.sh install
 	./script/npm.sh install
 
+install-font:
+	./script/font.sh install
+
 install-wsl:
 	./script/wsl.sh
 
@@ -33,6 +36,9 @@ clean-tool:
 	./script/git.sh uninstall
 	./script/mise.sh uninstall
 	./script/zsh.sh uninstall
+
+clean-font:
+	./script/font.sh uninstall
 
 clean-wsl:
 	./script/wsl.sh
