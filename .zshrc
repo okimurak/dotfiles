@@ -42,69 +42,6 @@ complete -C '$(which aws_completer)' aws
 
 # ----------------- Function ---------------------
 
-alias assume-role='function _assume_role() {
-  profile="$1"
-
-  if [ -z "$profile" ]; then
-    echo "\033[31m[ERROR] Specify profile name defined in config file.\033[0m"
-    return 1
-  fi
-
-  source_profile=$(aws configure get source_profile --profile "$profile")
-  role_arn=$(aws configure get role_arn --profile "$profile")
-
-  if [ -z "$source_profile" ] || [ -z "$role_arn" ]; then
-    echo "\033[31m[ERROR] Incomplete config file. Can not find source_profile or role_arn in config file.\033[0m"
-    return 1
-  fi
-
-  session_name="${profile}-$(date +%Y%m%d%H%M%S)"
-
-  creds=$(aws sts assume-role \
-    --profile "$source_profile" \
-    --role-arn "$role_arn" \
-    --role-session-name "$session_name" \
-    --query "Credentials" \
-    --output json 2>/dev/null)
-
-  if [ $? -ne 0 ] || [ -z "$creds" ]; then
-    echo "\033[31m[ERROR] Failed assume-role. Please check aws credential and permission to execute sts assume-role.\033[0m"
-    return 1
-  fi
-
-  export AWS_ACCESS_KEY_ID=$(echo $creds | jq -r .AccessKeyId)
-  export AWS_SECRET_ACCESS_KEY=$(echo $creds | jq -r .SecretAccessKey)
-  export AWS_SESSION_TOKEN=$(echo $creds | jq -r .SessionToken)
-
-  echo "\033[32m[SUCCESS] Assumed role $profile with session name $session_name\033[0m"
-  
-  session_info=$(aws sts get-caller-identity --output json 2>/dev/null)
-  if [ $? -eq 0 ] && [ -n "$session_info" ]; then
-    echo "\033[32m[SESSION INFO]\033[0m"
-    echo "$session_info" | jq .
-  else
-    echo "\033[31m[ERROR] Failed execute aws sts get-caller-identity\033[0m"
-  fi
-}; _assume_role'
-
-alias assume-logout='function _assume_logout() {
-  unset AWS_ACCESS_KEY_ID
-  unset AWS_SECRET_ACCESS_KEY
-  unset AWS_SESSION_TOKEN
-
-  echo "\033[32m[SUCCESS] AWS credentials have been cleared.\033[0m"
-  echo "\033[34m[INFO] Checking current AWS caller identity...\033[0m"
-  identity=$(aws sts get-caller-identity --output json 2>/dev/null)
-
-  if [ $? -eq 0 ]; then
-    echo "\033[32m[SUCCESS] Current caller identity after logout:\033[0m"
-    echo "$identity" | jq
-  else
-    echo "\033[31m[ERROR] No valid AWS session after logout. (as expected if no default credentials)\033[0m"
-  fi
-}; _assume_logout'
-
-
 function docker-search-tags() {
   curl -s -S "https://registry.hub.docker.com/v1/repositories/$1/tags" | jq '.[]["name"]'
 }
