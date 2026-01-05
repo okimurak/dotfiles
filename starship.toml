@@ -3,22 +3,40 @@ $directory\
 $git_branch\
 $git_status\
 $git_metrics\
+$nodejs\
 $aws\
 $time\
+$cmd_duration\
 $line_break
 $character
 """
 
+continuation_prompt = '[❯ ](fg:green)'
+
 [aws]
 format = '[$symbol($profile )(\($region\) )(\[$duration\] )]($style)'
-symbol = '🅰 '
+style = "bold #fe7f00"
+symbol = ' 🅰 '
+
+[character]
+success_symbol = '[❯](fg:green)'
+error_symbol = '[❯](fg:red)'
 
 [directory]
-format = "[ ﱮ $path ]($style)"
+style = "fg:blue"
+format = "[$path]($style)"
+truncation_length = 4
+truncation_symbol = "..."
+truncate_to_repo = false
+
+[git_branch]
+format = " [$symbol$branch]($style) "
+style = "fg:#888888"
 
 [git_metrics]
 disabled = false
-format = "([+$added]($added_style))[]($added_style)"
+format = '\([+$added]($added_style)/[-$deleted]($deleted_style)\)'
+only_nonzero_diffs = true
 
 [line_break]
 disabled = true
@@ -26,6 +44,14 @@ disabled = true
 [package]
 disabled = true
 
+[nodejs]
+style = "#ffc0cb"
+format = " [$symbol$version]($style)"
+
 [time]
 disabled = false
-format = '[ $time ]($style)'
+format = '🕙[$time]($style)'
+
+[cmd_duration]
+show_milliseconds = true
+format = ' [󱫌 $duration]($style)'
