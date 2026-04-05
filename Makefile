@@ -24,7 +24,7 @@ install-font:
 	./script/font.sh install
 
 install-wsl:
-	./script/wsl.sh
+	./script/wsl.sh install
 
 clean: clean-tool clean-dotfile
 
