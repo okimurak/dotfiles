@@ -96,10 +96,11 @@ make update
 ### Tools
 
 - Git
-- Linter
+- Linter / Formatter
   - [textlint](https://github.com/textlint/textlint) plugins
   - [markdownlint](https://github.com/DavidAnson/markdownlint)
   - [Biome](https://biomejs.dev/ja/)
+  - [Prettier](https://prettier.io/) : YAML / JSON formatter
 - [peco](https://github.com/peco/peco) : You can search command history by `Ctrl + R`.
 - Python
   - [uv](https://github.com/astral-sh/uv) : You can use uv to manage Python package if you develop Python project. Also you can execute tools created Python package like as [`AWS MCP Servers`](https://awslabs.github.io/mcp/), `cfn-lint` etc... without install.
