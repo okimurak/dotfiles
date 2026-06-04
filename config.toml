@@ -17,6 +17,7 @@ kubectl     = "1.32.6"
 kubectx     = "0.9.4"
 lazydocker  = "0.24.1"
 node        = "22.14.0"
+"npm:markdownlint-cli2" = { version = "0.18.1", depends = ["node"] }
 "npm:textlint" = { version = "15.7.1", depends = ["node"] }
 "npm:textlint-rule-common-misspellings" = { version = "1.0.1", depends = ["node"] }
 "npm:textlint-rule-preset-ja-spacing" = { version = "3.0.0", depends = ["node"] }
