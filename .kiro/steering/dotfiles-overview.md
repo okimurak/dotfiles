@@ -16,7 +16,7 @@
 
 - **パッケージ管理**: [mise](https://github.com/jdx/mise) で CLI ツールを一元管理（`config.toml`）
 - **シェル**: zsh + [Starship](https://starship.rs/) プロンプト（`starship.toml`）
-- **Linter**: textlint, markdownlint, Biome（npm 経由でグローバルインストール）
+- **Linter**: textlint, markdownlint-cli2, Biome（mise 経由で管理）
 - **セットアップ**: `Makefile` でインストール/アンインストール/アップデートを管理
 
 ### セットアップフロー
@@ -37,6 +37,17 @@ make install
 - コンテナ/K8s: kubectl, kubectx, helm, ctop, lazydocker, stern
 - 言語: node, python, golang
 - ユーティリティ: jq, yq, peco, eza, starship, uv, shellcheck, shfmt, terraform
+
+## ツール管理のルール
+
+このリポジトリではすべての CLI ツール・言語ランタイム・npm/pip パッケージを **mise**（`config.toml`）で一元管理する。
+
+- 新しいツールを追加する場合は `config.toml` の `[tools]` セクションに追記し、`mise install` で導入する
+- npm パッケージは `"npm:パッケージ名" = { version = "x.y.z", depends = ["node"] }` 形式で管理する（`npm install -g` は使わない）
+- pip パッケージは `"pipx:パッケージ名" = { version = "x.y.z", depends = ["python"] }` 形式で管理する
+- GitHub リリースのバイナリは `"ubi:owner/repo"` や `"aqua:owner/repo"` 形式で管理する
+- バージョンは必ず固定する（latest や範囲指定は使わない）
+- ツールの追加・削除・バージョン変更を行った場合は、このステアリングファイル（`dotfiles-overview.md`）と `README.md` の該当箇所も合わせて更新する
 
 ## 対応 OS
 
