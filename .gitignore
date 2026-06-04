@@ -2,12 +2,6 @@
 .gitconfig
 ## Working 
 .gitconfig_work
-# npm
-node_modules
-# Ruby
-Gemfile.loc
-# Python
-Pipfile.lock
 # Windows
 .windows_commands/**
 # zsh

@@ -6,3 +6,7 @@
 .DS_Store
 # Windows
 Thumbs.db
+# npm
+node_modules
+# Ruff
+.ruff_cache/
