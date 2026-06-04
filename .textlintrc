@@ -28,6 +28,11 @@
     "spellcheck-tech-word": true,
     "write-good": {
       "passive": false
+    },
+    "@textlint-ja/preset-ai-writing": {
+      "ai-tech-writing-guideline": {
+        "severity": "info"
+      }
     }
   }
 }
