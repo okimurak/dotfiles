@@ -1,7 +1,7 @@
 .PHONY: default install* clean*
 
 CANDIDATES := $(wildcard .??*)
-EXCLUSIONS := .git .markdownlint.jsonc .textlintrc
+EXCLUSIONS := .git .kiro .markdownlint.jsonc .textlintrc
 DOTFILES   := $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 
 default: update
