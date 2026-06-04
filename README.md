@@ -53,7 +53,7 @@ make install-tool
 
 ```bash
 make install-wsl
-``
+```
 
 ## Uninstall
 
