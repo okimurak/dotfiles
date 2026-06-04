@@ -19,7 +19,7 @@ install() {
 
 move_workspace() {
   # move workspace
-  lint_configure_path=$(pwd)/$(dirname $0)/
+  lint_configure_path=$(pwd)/$(dirname "$0")/
   workspace=${lint_configure_path}../../
   echo "Move workspace to ${workspace}"
   cd "${workspace}" || exit

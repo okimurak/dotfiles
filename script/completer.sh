@@ -2,7 +2,7 @@
 
 install() {
   # Replace install
-  workspace="$(dirname $0)"
+  workspace="$(dirname "$0")"
   source "${workspace}/.zshrc"
   completion_path=${workspace}/.zsh/completion
   if [[ ! -d "${completion_path}" ]]; then
@@ -10,18 +10,18 @@ install() {
     chmod 755 ${workspace}/.zsh/
     chmod 755 ${completion_path}
   else
-    rm -rf "${completion_path}/*"
+    rm -rf "${completion_path}"/*
   fi
 
   ## docker, docker-compose
-  curl -L https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker >"${completion_path}/_docker"
+  curl -fL https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker >"${completion_path}/_docker"
 
   ## eksctl
   eksctl completion zsh >"${completion_path}/_eksctl"
 
   ## Git
-  curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash >"${completion_path}/git-completion.bash"
-  curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh >"${completion_path}/_git"
+  curl -fL https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash >"${completion_path}/git-completion.bash"
+  curl -fL https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh >"${completion_path}/_git"
 
   ## helm
   helm completion zsh >"${completion_path}/_helm"

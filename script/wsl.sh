@@ -3,7 +3,10 @@
 install() {
 
   if [[ ! -f "/etc/wsl.conf" ]];then
-    sudo cat <<EOF > /etc/wsl.conf
+    sudo tee /etc/wsl.conf > /dev/null <<EOF
+[boot]
+systemd=true
+
 [interop]
 appendWindowsPath = false
 EOF
@@ -38,7 +41,7 @@ usage() {
 
 main() {
   local cmd=$1
-  configure_path=$(pwd)/$(dirname $0)/../.windows_commands
+  configure_path=$(pwd)/$(dirname "$0")/../.windows_commands
 
   if [[ $cmd == "install" ]]; then
     install

@@ -8,7 +8,7 @@ install() {
 }
 
 install_package() {
-  configuration_path=$(pwd)/$(dirname $0)/
+  configuration_path=$(pwd)/$(dirname "$0")/
   echo "Move workspace to ${configuration_path}"
   cd "${configuration_path}" || exit
 

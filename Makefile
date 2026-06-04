@@ -6,7 +6,13 @@ DOTFILES   := $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 
 default: update
 
-install: install-dotfile install-tool install-completer install-dotfile
+# Run install-dotfile twice: first to create symlinks needed by install-tool/install-completer
+# (mise.sh requires $HOME/.zshrc for mise activate), then again to pick up generated dotfiles.
+install:
+	$(MAKE) install-dotfile
+	$(MAKE) install-tool
+	$(MAKE) install-completer
+	$(MAKE) install-dotfile
 
 install-completer:
 	./script/completer.sh install
@@ -41,7 +47,7 @@ clean-font:
 	./script/font.sh uninstall
 
 clean-wsl:
-	./script/wsl.sh
+	./script/wsl.sh uninstall
 
 update: update-dotfile update-tool
 

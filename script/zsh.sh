@@ -89,10 +89,7 @@ install_zsh_package() {
 }
 
 install_zsh_configuration_files() {
-  # Change default shell
-  command -v zsh | sudo tee -a /etc/shells
-  sudo chsh -s "$(which zsh)"
-  configuration_path=$(pwd)/$(dirname $0)
+  configuration_path=$(pwd)/$(dirname "$0")
 
   mkdir -p "${HOME}/.config" && ln -snf "${configuration_path}/starship.toml" "${HOME}/.config/starship.toml"
   # Install zsh-autosuggestions
@@ -134,7 +131,7 @@ uninstall_zsh_configuration_files() {
   unlink "${HOME}/.config/starship.toml"
   # Uninstall zsh-autosuggestions
   unlink "${HOME}/.zsh/zsh-autosuggestions"
-  configuration_path=$(pwd)/$(dirname $0)
+  configuration_path=$(pwd)/$(dirname "$0")
   rm -rf "${configuration_path}/.zsh/zsh-autosuggestions"
 }
 

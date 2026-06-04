@@ -10,7 +10,7 @@ eval "$(~/.local/bin/mise activate zsh)"
 # Alias Config
 alias ls='eza --icons auto --time-style relative -F always --hyperlink -h --git --git-repos --sort=name'
 # Execute "ls" after "cd"
-chpwd() {ls}
+chpwd() { ls }
 
 
 # Git Operation
