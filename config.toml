@@ -3,6 +3,7 @@ aws-cli     = "2.32.6"
 aws-copilot = "1.27.0"
 aws-sam     = "1.140.0"
 ctop        = "0.7.7"
+codex = "0.137.0"
 eksctl      = "0.221.0"
 eza         = "0.23.4"
 "ubi:a8m/envsubst" = "1.4.3"
@@ -28,6 +29,7 @@ uv          = "0.9.13"
 "ubi:neosmart/tac" = "2.0"
 terraform   = "1.8.3"
 yq          = "4.33.2"
+
 
 [settings]
 node.gpg_verify = false
