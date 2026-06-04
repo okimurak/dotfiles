@@ -16,7 +16,7 @@
 
 - **パッケージ管理**: [mise](https://github.com/jdx/mise) で CLI ツールを一元管理（`config.toml`）
 - **シェル**: zsh + [Starship](https://starship.rs/) プロンプト（`starship.toml`）
-- **Linter**: textlint, markdownlint-cli2, Biome（mise 経由で管理）
+- **Linter / Formatter**: textlint, markdownlint-cli2, Biome, Prettier（mise 経由で管理）
 - **セットアップ**: `Makefile` でインストール/アンインストール/アップデートを管理
 
 ### セットアップフロー
