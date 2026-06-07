@@ -38,6 +38,7 @@ usage       = "2.1.1"
 uv          = "0.11.19"
 "ubi:neosmart/tac" = "2.0"
 terraform   = "1.8.3"
+yt-dlp = { version = "2026.03.17", rename_exe = "yt-dlp" }
 yq          = "4.33.2"
 
 
