@@ -11,10 +11,18 @@ install() {
   # move workspace
   move_workspace
 
+  # Install npm dependencies via mise deps (textlint + rules)
+  install_deps
+
   # Create symbolic links for configuration files
   for config_file in "${TOOL_CONFIG_FILES[@]}"; do
     ln -snf "${lint_configure_path}"../"${config_file}" "${config_file}"
   done
+}
+
+install_deps() {
+  echo "Installing npm dependencies via mise deps..."
+  MISE_EXPERIMENTAL=1 mise deps -C "${lint_configure_path}/.."
 }
 
 move_workspace() {
@@ -28,6 +36,9 @@ move_workspace() {
 uninstall() {
   # move workspace
   move_workspace
+
+  # Remove node_modules
+  rm -rf "${lint_configure_path}/../node_modules"
 
   # Remove symbolic links for configuration files
   for config_file in "${TOOL_CONFIG_FILES[@]}"; do

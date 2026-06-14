@@ -7,3 +7,5 @@
 # zsh
 .zshrc_work
 .zsh/**
+# npm
+node_modules/

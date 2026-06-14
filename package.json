@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "description": "textlint and its rule packages for dotfiles workspace",
+  "devDependencies": {
+    "@textlint-ja/textlint-rule-preset-ai-writing": "1.7.0",
+    "textlint": "15.7.1",
+    "textlint-rule-common-misspellings": "1.0.1",
+    "textlint-rule-preset-ja-spacing": "3.0.0",
+    "textlint-rule-preset-ja-technical-writing": "12.0.2",
+    "textlint-rule-spellcheck-tech-word": "5.0.0",
+    "textlint-rule-write-good": "2.0.0"
+  }
+}

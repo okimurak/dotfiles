@@ -19,13 +19,6 @@ lazydocker  = "0.24.1"
 node        = "22.14.0"
 "npm:markdownlint-cli2" = { version = "0.18.1", depends = ["node"] }
 "npm:prettier" = { version = "3.8.3", depends = ["node"] }
-"npm:textlint" = { version = "15.7.1", depends = ["node"] }
-"npm:textlint-rule-common-misspellings" = { version = "1.0.1", depends = ["node"] }
-"npm:textlint-rule-preset-ja-spacing" = { version = "3.0.0", depends = ["node"] }
-"npm:textlint-rule-preset-ja-technical-writing" = { version = "12.0.2", depends = ["node"] }
-"npm:textlint-rule-spellcheck-tech-word" = { version = "5.0.0", depends = ["node"] }
-"npm:textlint-rule-write-good" = { version = "2.0.0", depends = ["node"] }
-"npm:@textlint-ja/textlint-rule-preset-ai-writing" = { version = "1.7.0", depends = ["node"] }
 peco        = "0.5.11"
 "pipx:cfn-lint" = { version = "1.51.4", depends = ["python"] }
 python      = ["3.12.10", "3.11.7"]
@@ -45,3 +38,6 @@ yq          = "4.33.2"
 [settings]
 node.gpg_verify = false
 experimental = true
+
+[env]
+_.path = ["{{env.DOTFILES_DIR}}/node_modules/.bin"]
