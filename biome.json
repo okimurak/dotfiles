@@ -10,11 +10,13 @@
   "files": {
     "includes": [
       "**",
-      "!**/dist/**",
-      "!**/.next/**",
-      "!**/.turbo/**",
-      "!**/.vscode/**",
-      "!**/node_modules/**"
+      "/Users/okimurak/Documents/Git/biome.json",
+      "!**/dist",
+      "!**/.next",
+      "!**/.turbo",
+      "!**/.vscode",
+      "!**/node_modules",
+      "!!dotfiles"
     ]
   },
   "formatter": {
