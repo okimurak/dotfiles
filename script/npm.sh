@@ -2,10 +2,16 @@
 
 # Define an tool of configuration files
 TOOL_CONFIG_FILES=(
-  ".textlintrc"
   ".markdownlint.jsonc" # https://github.com/DavidAnson/vscode-markdownlint
   "biome.json"
 )
+
+# The textlint VS Code extension (3w36zj6.textlint) discovers a config at the
+# workspace root, but textlint cannot switch rules per file. Point the editor at
+# the Japanese config and let script/textlint-md.sh handle language selection
+# for the CLI and Kiro hooks.
+TEXTLINT_EDITOR_CONFIG_SOURCE=".textlintrc.ja.json"
+TEXTLINT_EDITOR_CONFIG_LINK=".textlintrc.json"
 
 install() {
   # move workspace
@@ -18,6 +24,11 @@ install() {
   for config_file in "${TOOL_CONFIG_FILES[@]}"; do
     ln -snf "${lint_configure_path}"../"${config_file}" "${config_file}"
   done
+
+  ln -snf "${lint_configure_path}"../"${TEXTLINT_EDITOR_CONFIG_SOURCE}" "${TEXTLINT_EDITOR_CONFIG_LINK}"
+
+  # Remove the link to the config that predates the ja/en split.
+  rm -f ".textlintrc"
 }
 
 install_deps() {
@@ -44,6 +55,8 @@ uninstall() {
   for config_file in "${TOOL_CONFIG_FILES[@]}"; do
     unlink "${config_file}"
   done
+
+  unlink "${TEXTLINT_EDITOR_CONFIG_LINK}"
 }
 
 usage() {

@@ -1,9 +1,22 @@
 {
+  // Config for Japanese documents. Selected by script/textlint-md.sh.
+  // Keep the "shared" block below in sync with .textlintrc.en.json.
+  // textlint has no `extends`, so the block has to be duplicated.
+  // See https://github.com/textlint/textlint/issues/210
   "filters": {},
   "rules": {
+    // ---- shared: language independent ----
     "common-misspellings": {
       "ignore": []
     },
+    "@textlint-ja/preset-ai-writing": {
+      "ai-tech-writing-guideline": true,
+      "no-ai-list-formatting": true,
+      "no-ai-hype-expressions": true,
+      "no-ai-emphasis-patterns": true,
+      "no-ai-colon-continuation": true
+    },
+    // ---- Japanese only ----
     "preset-ja-spacing": {
       "ja-space-between-half-and-full-width": {
         "space": "always",
@@ -33,16 +46,7 @@
       "no-mix-dearu-desumasu": true,
       "no-zero-width-spaces": true
     },
-    "spellcheck-tech-word": true,
-    "write-good": {
-      "passive": false
-    },
-    "@textlint-ja/preset-ai-writing": {
-      "ai-tech-writing-guideline": true,
-      "no-ai-list-formatting": true,
-      "no-ai-hype-expressions": true,
-      "no-ai-emphasis-patterns": true,
-      "no-ai-colon-continuation": true,
-    }
+    // Rewrites technical terms into katakana, so it must stay off for English.
+    "spellcheck-tech-word": true
   }
 }

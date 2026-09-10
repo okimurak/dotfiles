@@ -19,6 +19,33 @@
 - **Linter / Formatter**: textlint, markdownlint-cli2, Biome, Prettier（mise 経由で管理）
 - **セットアップ**: `Makefile` でインストール/アンインストール/アップデートを管理
 
+### textlint の設定構成
+
+textlint はファイルごとにルールを切り替える機能を持たないため、言語ごとに config を分けている。
+
+- `.textlintrc.ja.json` : 日本語文書用
+- `.textlintrc.en.json` : 英語文書用
+- `script/textlint-md.sh` : 文書の言語を判定して config を選び、textlint を実行するラッパー
+
+Markdown の lint はこのラッパー経由で実行する。
+
+```bash
+./script/textlint-md.sh --fix path/to/file.md
+```
+
+エージェントから実行する場合は `markdown-lint` スキルを使う。`--fix` を打って良い条件や、error と warning の扱いの違いをスキル側に集約している。
+
+言語判定はパスが `*_en.md`, `*.en.md`, `en/` 配下のいずれかに一致すれば英語、それ以外は日本語文字の比率で決める。比率の計算ではコードブロックを除外する。
+
+両 config の先頭には言語非依存のルールを共通ブロックとして持つ。textlint に `extends` がないため重複しており、片方を変更したらもう片方も合わせて更新する。
+
+言語固有のルールはその言語の config にのみ置く。
+
+- `spellcheck-tech-word` : 英語では無効。`--fix` で英単語をカタカナに書き換えてしまう
+- `write-good` : 英語のみ有効。指摘は人間の判断が必要なため severity を `warning` にして exit status を 0 に保つ
+
+`script/npm.sh install` は `.textlintrc.ja.json` を `.textlintrc.json` として Git ワークスペース直下にシンボリックリンクする。これはエディタの textlint 拡張向けで、拡張は config を 1 つしか探索できないため日本語用をデフォルトにしている。
+
 ### セットアップフロー
 
 ```

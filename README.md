@@ -152,7 +152,7 @@ Example:
 npm install --save-dev textlint-rule-prefer-tari-tari@1.0.2
 ```
 
-Then add the rule configuration to [`.textlintrc`](.textlintrc) and commit [`package.json`](package.json), `package-lock.json`, and `.textlintrc`.
+Then add the rule configuration to the config for the language the rule targets (see [Config per language](#config-per-language)) and commit [`package.json`](package.json), `package-lock.json`, and the config you changed.
 
 ### Removing a package
 
@@ -161,7 +161,32 @@ cd "$DOTFILES_DIR"
 npm uninstall <package-name>
 ```
 
-Then remove the rule configuration from [`.textlintrc`](.textlintrc) and commit the changes.
+Then remove the rule configuration from the config files and commit the changes.
+
+### Config per language
+
+textlint cannot switch rules per file, so there is one config per language.
+
+| File | Purpose |
+| --- | --- |
+| [`.textlintrc.ja.json`](.textlintrc.ja.json) | Japanese documents |
+| [`.textlintrc.en.json`](.textlintrc.en.json) | English documents |
+
+Both configs share a block of language independent rules. textlint has no `extends`, so the block is duplicated and has to be kept in sync by hand.
+
+Rules that only make sense for one language stay in that config. `spellcheck-tech-word` is the clearest example: with `--fix` it rewrites English words into katakana, so it is disabled for English. `write-good` is the reverse and reports warnings instead of errors, because its suggestions need human judgement.
+
+### Running textlint
+
+Use [`script/textlint-md.sh`](script/textlint-md.sh). It picks the config per file and runs textlint from this directory so that rule packages resolve.
+
+```bash
+./script/textlint-md.sh --fix path/to/file.md
+```
+
+A file is treated as English when its path matches `*_en.md`, `*.en.md` or contains an `en` directory. Otherwise the ratio of Japanese characters decides, ignoring fenced code blocks.
+
+`script/npm.sh install` also links `.textlintrc.ja.json` to `.textlintrc.json` in the Git workspace root. That link exists for the textlint editor extension, which discovers a single config and cannot switch per file.
 
 ### Syncing on another machine
 

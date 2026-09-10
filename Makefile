@@ -1,7 +1,9 @@
 .PHONY: default install* clean*
 
 CANDIDATES := $(wildcard .??*)
-EXCLUSIONS := .git .kiro .markdownlint.jsonc .textlintrc
+# Linter configs are symlinked into the Git workspace root by script/npm.sh,
+# not into $HOME, so keep them out of the dotfiles link target list.
+EXCLUSIONS := .git .kiro .markdownlint.jsonc $(wildcard .textlintrc*)
 DOTFILES   := $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 
 default: update

@@ -1,0 +1,65 @@
+{
+  // Config for English documents. Selected by script/textlint-md.sh.
+  // Keep the "shared" block below in sync with .textlintrc.ja.json.
+  // textlint has no `extends`, so the block has to be duplicated.
+  // See https://github.com/textlint/textlint/issues/210
+  "filters": {},
+  "rules": {
+    // ---- shared: language independent ----
+    // Markdown structure checks in preset-ai-writing fire regardless of the
+    // language, which is why the preset stays enabled here as well.
+    "common-misspellings": {
+      "ignore": []
+    },
+    "@textlint-ja/preset-ai-writing": {
+      "ai-tech-writing-guideline": true,
+      "no-ai-list-formatting": true,
+      "no-ai-hype-expressions": true,
+      "no-ai-emphasis-patterns": true,
+      "no-ai-colon-continuation": true
+    },
+    // ---- Japanese rules turned off ----
+    // Spacing between half and full width characters is meaningless here.
+    "preset-ja-spacing": false,
+    "preset-ja-technical-writing": {
+      // Preset members default to enabled, so every Japanese grammar check
+      // has to be disabled explicitly.
+      "sentence-length": false,
+      "max-comma": false,
+      "max-ten": false,
+      "max-kanji-continuous-len": false,
+      "no-mix-dearu-desumasu": false,
+      "ja-no-mixed-period": false,
+      "arabic-kanji-numbers": false,
+      "no-doubled-conjunction": false,
+      "no-doubled-conjunctive-particle-ga": false,
+      "no-double-negative-ja": false,
+      "no-doubled-joshi": false,
+      "no-dropping-the-ra": false,
+      "no-exclamation-question-mark": false,
+      "no-hankaku-kana": false,
+      "ja-no-weak-phrase": false,
+      "ja-no-successive-word": false,
+      "ja-no-abusage": false,
+      "ja-no-redundant-expression": false,
+      "ja-unnatural-alphabet": false,
+      // These four check characters and encoding rather than Japanese
+      // grammar, so they are useful for English text too.
+      "no-invalid-control-character": true,
+      "no-nfd": true,
+      "no-unmatched-pair": true,
+      "no-zero-width-spaces": true
+    },
+    // With --fix this rewrites English words into katakana
+    // (for example "session" into "セッション").
+    "spellcheck-tech-word": false,
+    // ---- English only ----
+    // write-good suggests rewrites that need human judgement, so it reports
+    // warnings (exit status 0) instead of errors to keep --fix from
+    // rewriting prose automatically.
+    "write-good": {
+      "severity": "warning",
+      "passive": false
+    }
+  }
+}
