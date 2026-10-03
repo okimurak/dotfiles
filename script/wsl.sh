@@ -15,7 +15,7 @@ EOF
   if [[ ! -d "${configure_path}" ]]; then
     mkdir -p "${configure_path}"
   fi
-  cd ${configure_path} || exit
+  cd "${configure_path}" || exit
 
   local SystemMountPath="/mnt/c"
 
@@ -27,6 +27,8 @@ EOF
   ln -s "${SystemMountPath}/Program Files/Docker/Docker/resources/bin/docker-credential-desktop.exe" .
   # PowerShell
   ln -s "${SystemMountPath}/Windows/System32/WindowsPowerShell/v1.0/powershell.exe" .
+  # WSL container CLI
+  ln -s "${SystemMountPath}/Program Files/WSL/wslc.exe" .
 }
 
 uninstall() {
