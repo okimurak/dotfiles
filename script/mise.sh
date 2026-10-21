@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-INSTALL_MISE_VERSION=v2026.6.6
+INSTALL_MISE_VERSION=v2026.10.13
 
 install() {
   install_mise

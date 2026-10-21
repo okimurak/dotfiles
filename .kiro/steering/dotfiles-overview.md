@@ -63,7 +63,7 @@ make install
 - AWS 関連: aws-cli, aws-copilot, aws-sam, eksctl, rain, cfn-lint
 - コンテナ/K8s: kubectl, kubectx, helm, ctop, lazydocker, stern
 - 言語: node, python, golang
-- ユーティリティ: jq, yq, peco, eza, starship, uv, shellcheck, shfmt, terraform
+- ユーティリティ: jq, yq, peco, eza, starship, uv, shellcheck, shfmt, terraform, ffmpeg
 
 ## ツール管理のルール
 
