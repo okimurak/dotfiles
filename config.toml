@@ -31,7 +31,7 @@ stern       = "1.24.0"
 usage       = "3.5.0"
 uv          = "0.11.19"
 "ubi:neosmart/tac" = "2.0"
-terraform   = "1.8.3"
+terraform   = "1.16.7"
 yt-dlp      = "2026.08.19"
 yq          = "4.33.2"
 
